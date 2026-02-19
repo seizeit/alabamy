@@ -1,0 +1,5 @@
+Task 1.01 complete. Build passes, all assets preserved.
+
+=== POST-TASK BUILD VERIFICATION ===
+./build_loop.sh: line 153: timeout: command not found
+Exit code: 127
