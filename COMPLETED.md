@@ -38,3 +38,8 @@
 ## 2.02 — Create database client
 - Created `src/db/index.ts` with Turso client via `@libsql/client` using TURSO_DATABASE_URL and TURSO_AUTH_TOKEN env vars
 - Exported Drizzle ORM instance with schema for type-safe queries
+
+## 2.03 — Create Drizzle config
+- Created `drizzle.config.ts` with Turso dialect, schema path, and dbCredentials from env vars
+- `npx drizzle-kit push` correctly requires real Turso credentials (placeholders in .env.local)
+- Config validated: TypeScript compiles cleanly with no errors
