@@ -1,6 +1,41 @@
 @import "tailwindcss";
 
 @theme {
+  /* Crimson scale */
+  --color-crimson-50: #FEF2F4;
+  --color-crimson-100: #FDE6EA;
+  --color-crimson-200: #F9BCC6;
+  --color-crimson-300: #F28A9B;
+  --color-crimson-400: #E14D66;
+  --color-crimson-500: #C41E3A;
+  --color-crimson-600: #A01830;
+  --color-crimson-700: #7D1225;
+  --color-crimson-800: #5A0D1B;
+  --color-crimson-900: #3D0912;
+
+  /* Gold accent */
+  --color-gold-50: #FFFBF0;
+  --color-gold-100: #FFF3D6;
+  --color-gold-200: #FFE4A8;
+  --color-gold-300: #FFD074;
+  --color-gold-400: #F5B638;
+  --color-gold-500: #D99B1E;
+  --color-gold-600: #B07D15;
+
+  /* Warm neutrals */
+  --color-warm-50: #FAFAF8;
+  --color-warm-100: #F5F3EF;
+  --color-warm-200: #F0EDE7;
+  --color-warm-300: #EBE8E2;
+  --color-warm-400: #D5D1C9;
+  --color-warm-500: #B5B1A9;
+  --color-warm-600: #8A8A84;
+  --color-warm-700: #6A6A64;
+  --color-warm-800: #4A4A46;
+  --color-warm-900: #2A2A26;
+  --color-warm-950: #1A1A18;
+
+  /* Backward-compatible aliases */
   --color-cream: #FAFAF8;
   --color-cream-dark: #F0EDE7;
   --color-card-border: #EBE8E2;
@@ -9,12 +44,13 @@
   --color-ink-muted: #8A8A84;
   --color-crimson: #C41E3A;
   --color-crimson-dark: #A01830;
-  --color-header-bg: #111111;
+  --color-header-bg: #1A1A18;
   --color-header-text: #FAFAF8;
 
+  /* Fonts */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-raleway), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: Georgia, "Times New Roman", Times, serif;
+  --font-display: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-source-serif), Georgia, "Times New Roman", serif;
 }
 
 @utility scrollbar-hide {
@@ -27,6 +63,6 @@
 
 @layer base {
   body {
-    @apply bg-cream text-ink font-sans antialiased;
+    @apply bg-warm-50 text-warm-950 font-sans antialiased;
   }
 }

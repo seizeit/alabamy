@@ -14,7 +14,10 @@ function relativeTime(dateStr: string | null): string {
   const diffDay = Math.floor(diffHr / 24);
   if (diffDay === 1) return "yesterday";
   if (diffDay < 30) return `${diffDay}d ago`;
-  return new Date(dateStr).toLocaleDateString("en-US", { month: "short", day: "numeric" });
+  return new Date(dateStr).toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+  });
 }
 
 export function HeadlineItem({ headline }: { headline: HeadlineItemType }) {
@@ -28,11 +31,11 @@ export function HeadlineItem({ headline }: { headline: HeadlineItemType }) {
         rel="noopener"
         className="group block"
       >
-        <span className="text-[15px] leading-snug font-serif text-ink group-hover:text-crimson transition-colors">
+        <span className="text-[15px] leading-snug font-serif text-warm-900 group-hover:text-crimson-600 transition-colors">
           {headline.title}
         </span>
         {timestamp && (
-          <span className="block text-xs text-ink-muted mt-0.5">
+          <span className="block text-xs text-warm-500 mt-0.5">
             {timestamp}
           </span>
         )}

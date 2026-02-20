@@ -1,4 +1,4 @@
-import { sqliteTable, text, integer, index } from "drizzle-orm/sqlite-core";
+import { sqliteTable, text, integer, index, uniqueIndex } from "drizzle-orm/sqlite-core";
 import { relations, sql } from "drizzle-orm";
 
 export const sources = sqliteTable("sources", {
@@ -8,11 +8,28 @@ export const sources = sqliteTable("sources", {
   url: text("url").notNull(),
   feed_url: text("feed_url"),
   feed_type: text("feed_type").notNull().default("rss"),
-  category: text("category").notNull(),
+  geo: text("category").notNull(),
   active: integer("active").notNull().default(1),
   last_fetched_at: text("last_fetched_at"),
   created_at: text("created_at").default(sql`(datetime('now'))`),
 });
+
+export const sourceTopics = sqliteTable(
+  "source_topics",
+  {
+    id: integer("id").primaryKey({ autoIncrement: true }),
+    source_id: integer("source_id")
+      .notNull()
+      .references(() => sources.id),
+    topic: text("topic").notNull(),
+    is_primary: integer("is_primary").notNull().default(0),
+  },
+  (table) => [
+    uniqueIndex("idx_source_topic_unique").on(table.source_id, table.topic),
+    index("idx_source_topics_topic").on(table.topic),
+    index("idx_source_topics_source").on(table.source_id),
+  ]
+);
 
 export const headlines = sqliteTable(
   "headlines",
@@ -34,6 +51,14 @@ export const headlines = sqliteTable(
 
 export const sourcesRelations = relations(sources, ({ many }) => ({
   headlines: many(headlines),
+  topics: many(sourceTopics),
+}));
+
+export const sourceTopicsRelations = relations(sourceTopics, ({ one }) => ({
+  source: one(sources, {
+    fields: [sourceTopics.source_id],
+    references: [sources.id],
+  }),
 }));
 
 export const headlinesRelations = relations(headlines, ({ one }) => ({

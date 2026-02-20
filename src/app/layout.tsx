@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Raleway } from "next/font/google";
+import { Inter, Outfit, Source_Serif_4 } from "next/font/google";
 import Footer from "@/components/footer";
 import "./globals.css";
 
@@ -9,9 +9,15 @@ const inter = Inter({
   display: "swap",
 });
 
-const raleway = Raleway({
+const outfit = Outfit({
   subsets: ["latin"],
-  variable: "--font-raleway",
+  variable: "--font-outfit",
+  display: "swap",
+});
+
+const sourceSerif = Source_Serif_4({
+  subsets: ["latin"],
+  variable: "--font-source-serif",
   display: "swap",
 });
 
@@ -50,7 +56,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${raleway.variable}`}>
+      <body
+        className={`${inter.variable} ${outfit.variable} ${sourceSerif.variable}`}
+      >
         {children}
         <Footer />
       </body>
