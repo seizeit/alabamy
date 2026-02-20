@@ -79,7 +79,7 @@ export default function Header({
             </div>
           </div>
           {lastUpdatedAt && (
-            <div className="text-[10px] text-white/40 font-sans tracking-wide pt-1 pb-0.5 border-t border-white/10 mt-1.5">
+            <div className="text-[10px] text-white/70 font-sans tracking-wide pt-1 pb-0.5 border-t border-white/10 mt-1.5">
               {formatDateLine(lastUpdatedAt)}
             </div>
           )}
