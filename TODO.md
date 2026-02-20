@@ -37,5 +37,5 @@
 - [x] **5.02** Verify full page renders — run `npm run build` to check for errors, verify all 10 categories would display correctly in the markup
 
 ## Phase 6: Polish
-- [ ] **6.01** Final build verification — run `npm run build`, fix any TypeScript or build errors, ensure all links use target="_blank", verify sticky header markup, check category nav has horizontal scroll on mobile, no console errors
+- [x] **6.01** Final build verification — run `npm run build`, fix any TypeScript or build errors, ensure all links use target="_blank", verify sticky header markup, check category nav has horizontal scroll on mobile, no console errors
 - [ ] **6.02** Add `public/robots.txt` (allow all, sitemap reference) and `public/sitemap.xml` (basic with homepage URL https://alabamy.com)

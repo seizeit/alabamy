@@ -177,3 +177,10 @@
 - Confirmed sticky header with z-50 in header.tsx
 - Confirmed category-nav has overflow-x-auto + scrollbar-hide for mobile horizontal scroll
 - All 7 components present: header, category-nav, category-section, source-card, headline-item, footer, last-updated
+
+## 6.01 — Final build verification
+- `npm run build` passes cleanly: TypeScript compilation, static generation, no errors
+- All headline links use `target="_blank"` with `rel="noopener"` (headline-item.tsx)
+- Sticky header confirmed: `sticky top-0 z-50 bg-[#111111]` (header.tsx)
+- Category nav has `overflow-x-auto` + `scrollbar-hide` for mobile horizontal scroll (category-nav.tsx)
+- No console errors in build output
