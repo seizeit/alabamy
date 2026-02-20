@@ -1,0 +1,5 @@
+Task 3.02 complete. Committed `e52ae8a`.
+
+=== POST-TASK BUILD VERIFICATION ===
+./build_loop.sh: line 153: timeout: command not found
+Exit code: 127

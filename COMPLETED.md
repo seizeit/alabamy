@@ -75,3 +75,9 @@
 - Sequential processing to respect Firecrawl API rate limits
 - Inserts with `onConflictDoNothing` on url, updates `last_fetched_at`
 - Returns `{ success, failed }` counts
+
+## 3.03 — Create pruner
+- Created `src/lib/fetchers/pruner.ts` with `pruneHeadlines()` function
+- For each source, keeps max 20 most recent headlines by fetched_at
+- Deletes older headlines beyond the limit
+- Returns `{ deletedCount }` for reporting
