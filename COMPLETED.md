@@ -184,3 +184,7 @@
 - Sticky header confirmed: `sticky top-0 z-50 bg-[#111111]` (header.tsx)
 - Category nav has `overflow-x-auto` + `scrollbar-hide` for mobile horizontal scroll (category-nav.tsx)
 - No console errors in build output
+
+## 6.02 — Add robots.txt and sitemap.xml
+- Created `public/robots.txt`: allows all crawlers, references sitemap at https://alabamy.com/sitemap.xml
+- Created `public/sitemap.xml`: basic XML sitemap with homepage URL https://alabamy.com, daily changefreq, priority 1.0

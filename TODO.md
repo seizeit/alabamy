@@ -38,4 +38,4 @@
 
 ## Phase 6: Polish
 - [x] **6.01** Final build verification — run `npm run build`, fix any TypeScript or build errors, ensure all links use target="_blank", verify sticky header markup, check category nav has horizontal scroll on mobile, no console errors
-- [ ] **6.02** Add `public/robots.txt` (allow all, sitemap reference) and `public/sitemap.xml` (basic with homepage URL https://alabamy.com)
+- [x] **6.02** Add `public/robots.txt` (allow all, sitemap reference) and `public/sitemap.xml` (basic with homepage URL https://alabamy.com)
