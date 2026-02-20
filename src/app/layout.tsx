@@ -24,11 +24,11 @@ const lora = Lora({
 export const metadata: Metadata = {
   title: "Alabamy | Alabama News",
   description:
-    "Alabama's news, all in one place. Headlines from 44 sources across the state, updated daily.",
+    "Alabama's news, all in one place. Headlines from 80+ sources across the state, updated daily.",
   openGraph: {
     title: "Alabamy | Alabama News",
     description:
-      "Alabama's news, all in one place. Headlines from 44 sources across the state, updated daily.",
+      "Alabama's news, all in one place. Headlines from 80+ sources across the state, updated daily.",
     url: "https://alabamy.com",
     siteName: "Alabamy",
     locale: "en_US",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Alabamy | Alabama News",
     description:
-      "Alabama's news, all in one place. Headlines from 44 sources across the state, updated daily.",
+      "Alabama's news, all in one place. Headlines from 80+ sources across the state, updated daily.",
   },
   icons: {
     icon: [
