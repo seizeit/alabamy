@@ -21,8 +21,8 @@ export function LastUpdated({ fetchedAt }: { fetchedAt: string | null }) {
   if (!fetchedAt) return null;
 
   return (
-    <span className="inline-block text-xs text-warm-500 bg-warm-200 px-3 py-1 rounded-full">
-      Last updated: {relativeTime(fetchedAt)}
+    <span className="inline-block text-xs text-porch-brown">
+      Updated {relativeTime(fetchedAt)}
     </span>
   );
 }

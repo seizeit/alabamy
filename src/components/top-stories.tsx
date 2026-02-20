@@ -26,53 +26,50 @@ export function TopStories({ stories }: { stories: TopStory[] }) {
   const [lead, ...rest] = stories;
 
   return (
-    <section className="mb-10">
-      <div className="border-b-2 border-crimson-500 pb-2 mb-5">
-        <h2 className="font-display text-2xl sm:text-3xl font-bold text-warm-950 tracking-tight">
-          Top Stories
-        </h2>
-      </div>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-        {/* Lead story — large */}
-        <a
-          href={lead.url}
-          target="_blank"
-          rel="noopener"
-          className="lg:col-span-2 group block bg-white rounded-xl border border-warm-300 p-6 hover:shadow-md transition-shadow"
-        >
-          <span className="text-xs font-medium uppercase tracking-wider text-crimson-500">
-            {lead.source_name}
-          </span>
-          <h3 className="font-serif text-xl sm:text-2xl leading-tight text-warm-950 group-hover:text-crimson-600 transition-colors mt-2">
-            {lead.title}
-          </h3>
-          <span className="block text-xs text-warm-500 mt-2">
-            {relativeTime(lead.published_at ?? lead.fetched_at)}
-          </span>
-        </a>
+    <section className="mb-12 pb-12 border-b border-dashed border-porch-tan">
+      <h2 className="font-display text-xs uppercase tracking-[0.2em] text-porch-brown mb-6">
+        Today&apos;s Lead
+      </h2>
 
-        {/* Secondary stories */}
-        <div className="space-y-3">
-          {rest.map((story) => (
-            <a
-              key={story.id}
-              href={story.url}
-              target="_blank"
-              rel="noopener"
-              className="group block bg-white rounded-xl border border-warm-300 p-4 hover:shadow-md transition-shadow"
-            >
-              <span className="text-xs font-medium uppercase tracking-wider text-crimson-500">
-                {story.source_name}
-              </span>
-              <h3 className="font-serif text-[15px] leading-snug text-warm-950 group-hover:text-crimson-600 transition-colors mt-1">
-                {story.title}
-              </h3>
-              <span className="block text-xs text-warm-500 mt-1">
-                {relativeTime(story.published_at ?? story.fetched_at)}
-              </span>
-            </a>
-          ))}
-        </div>
+      {/* Lead story */}
+      <a
+        href={lead.url}
+        target="_blank"
+        rel="noopener"
+        className="group block mb-8"
+      >
+        <span className="text-xs font-sans font-semibold uppercase tracking-wider text-crimson-500">
+          {lead.source_name}
+        </span>
+        <h3 className="font-serif text-2xl sm:text-3xl lg:text-[2.25rem] leading-tight font-medium text-warm-900 group-hover:text-crimson-600 transition-colors mt-2">
+          {lead.title}
+        </h3>
+        <span className="block text-sm text-porch-brown mt-2">
+          {relativeTime(lead.published_at ?? lead.fetched_at)}
+        </span>
+      </a>
+
+      {/* Supporting stories — two column on desktop */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-5">
+        {rest.map((story) => (
+          <a
+            key={story.id}
+            href={story.url}
+            target="_blank"
+            rel="noopener"
+            className="group block"
+          >
+            <span className="text-xs font-sans font-semibold uppercase tracking-wider text-crimson-500">
+              {story.source_name}
+            </span>
+            <h3 className="font-serif text-lg leading-snug font-medium text-warm-900 group-hover:text-crimson-600 transition-colors mt-1">
+              {story.title}
+            </h3>
+            <span className="block text-xs text-porch-brown mt-1">
+              {relativeTime(story.published_at ?? story.fetched_at)}
+            </span>
+          </a>
+        ))}
       </div>
     </section>
   );

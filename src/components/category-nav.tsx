@@ -26,10 +26,10 @@ export default function CategoryNav({
         for (const entry of entries) {
           if (entry.isIntersecting) {
             setActive(entry.target.id);
-            const pill = navRef.current?.querySelector(
+            const tab = navRef.current?.querySelector(
               `[data-slug="${entry.target.id}"]`
             );
-            pill?.scrollIntoView({
+            tab?.scrollIntoView({
               behavior: "smooth",
               block: "nearest",
               inline: "center",
@@ -37,7 +37,7 @@ export default function CategoryNav({
           }
         }
       },
-      { rootMargin: "-120px 0px -60% 0px", threshold: 0 }
+      { rootMargin: "-100px 0px -60% 0px", threshold: 0 }
     );
 
     sections.forEach((el) => observer.observe(el));
@@ -47,24 +47,24 @@ export default function CategoryNav({
   if (categories.length === 0) return null;
 
   return (
-    <nav
-      ref={navRef}
-      className="flex gap-2 overflow-x-auto py-2 scrollbar-hide -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8"
+    <div
+      ref={navRef as React.RefObject<HTMLDivElement>}
+      className="flex gap-1 overflow-x-auto pb-2.5 scrollbar-hide -mx-4 px-4 sm:-mx-6 sm:px-6"
     >
       {categories.map((cat) => (
         <a
           key={cat.slug}
           href={`#${cat.slug}`}
           data-slug={cat.slug}
-          className={`whitespace-nowrap px-4 py-1.5 rounded-full text-sm font-display font-medium transition-all shrink-0 ${
+          className={`whitespace-nowrap px-3 py-1.5 text-sm font-display font-medium transition-all shrink-0 border-b-2 ${
             active === cat.slug
-              ? "bg-crimson-500 text-white shadow-sm"
-              : "bg-warm-200 text-warm-800 hover:bg-warm-300"
+              ? "border-crimson-500 text-white"
+              : "border-transparent text-porch-tan/70 hover:text-white hover:border-porch-tan/30"
           }`}
         >
           {cat.name}
         </a>
       ))}
-    </nav>
+    </div>
   );
 }

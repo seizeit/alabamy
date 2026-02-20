@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Outfit, Source_Serif_4 } from "next/font/google";
+import { Inter, Outfit, Lora } from "next/font/google";
 import Footer from "@/components/footer";
 import "./globals.css";
 
@@ -15,9 +15,9 @@ const outfit = Outfit({
   display: "swap",
 });
 
-const sourceSerif = Source_Serif_4({
+const lora = Lora({
   subsets: ["latin"],
-  variable: "--font-source-serif",
+  variable: "--font-lora",
   display: "swap",
 });
 
@@ -57,7 +57,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${outfit.variable} ${sourceSerif.variable}`}
+        className={`${inter.variable} ${outfit.variable} ${lora.variable}`}
       >
         {children}
         <Footer />

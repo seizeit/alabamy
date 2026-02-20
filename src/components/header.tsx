@@ -2,46 +2,72 @@ import Image from "next/image";
 import Link from "next/link";
 import CategoryNav from "./category-nav";
 import { GeoFilter } from "./geo-filter";
+import { SmartNav } from "./smart-nav";
 
 type CategoryInfo = { name: string; slug: string };
 
 export default function Header({
   categories = [],
   activeGeo = "all",
+  headlineCount = 0,
+  sourceCount = 44,
 }: {
   categories?: CategoryInfo[];
   activeGeo?: string;
+  headlineCount?: number;
+  sourceCount?: number;
 }) {
+  const today = new Date().toLocaleDateString("en-US", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
   return (
-    <header className="sticky top-0 z-50 bg-warm-50 border-b border-warm-300 shadow-sm">
-      <div className="h-0.5 bg-crimson-500" />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between py-3">
-          <Link href="/" className="flex items-center gap-3">
+    <>
+      {/* Hero */}
+      <header className="bg-porch-dark text-porch-cream">
+        <div className="max-w-[960px] mx-auto px-4 sm:px-6 py-8 sm:py-14 text-center">
+          <Link href="/" className="inline-flex flex-col items-center gap-2 sm:gap-3">
             <Image
               src="/alabamy-icon.png"
               alt=""
-              width={48}
-              height={32}
-              className="h-8 w-auto"
+              width={72}
+              height={48}
+              className="h-10 sm:h-12 w-auto"
               aria-hidden="true"
             />
             <Image
               src="/alabamy-wordmark.png"
               alt="Alabamy"
-              width={140}
-              height={32}
-              className="h-7 w-auto"
+              width={200}
+              height={44}
+              className="h-8 sm:h-10 w-auto brightness-0 invert"
               priority
             />
           </Link>
-          <span className="hidden sm:block font-display text-sm font-light uppercase tracking-[0.15em] text-warm-600">
+          <p className="font-serif italic text-porch-tan text-sm sm:text-base mt-2 sm:mt-3 tracking-wide">
             Boundless.
-          </span>
+          </p>
+          <p className="text-xs sm:text-sm text-porch-tan/70 mt-3 sm:mt-4 font-sans">
+            {today}
+            {headlineCount > 0 && (
+              <>
+                {" "}&mdash; {headlineCount} headlines from {sourceCount} sources
+              </>
+            )}
+          </p>
         </div>
-        <CategoryNav categories={categories} />
-        <GeoFilter activeGeo={activeGeo} />
-      </div>
-    </header>
+      </header>
+
+      {/* Smart sticky nav — hides on scroll down, shows on scroll up */}
+      <SmartNav>
+        <div className="max-w-[960px] mx-auto px-4 sm:px-6">
+          <GeoFilter activeGeo={activeGeo} />
+          <CategoryNav categories={categories} />
+        </div>
+      </SmartNav>
+    </>
   );
 }

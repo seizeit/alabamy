@@ -20,7 +20,13 @@ function relativeTime(dateStr: string | null): string {
   });
 }
 
-export function HeadlineItem({ headline }: { headline: HeadlineItemType }) {
+export function HeadlineItem({
+  headline,
+  large = false,
+}: {
+  headline: HeadlineItemType;
+  large?: boolean;
+}) {
   const timestamp = relativeTime(headline.published_at ?? headline.fetched_at);
 
   return (
@@ -31,11 +37,15 @@ export function HeadlineItem({ headline }: { headline: HeadlineItemType }) {
         rel="noopener"
         className="group block"
       >
-        <span className="text-[15px] leading-snug font-serif text-warm-900 group-hover:text-crimson-600 transition-colors">
+        <span
+          className={`leading-snug font-serif text-warm-900 group-hover:text-crimson-600 transition-colors ${
+            large ? "text-lg sm:text-xl font-medium" : "text-[15px]"
+          }`}
+        >
           {headline.title}
         </span>
         {timestamp && (
-          <span className="block text-xs text-warm-500 mt-0.5">
+          <span className="inline-block text-xs text-porch-brown ml-2">
             {timestamp}
           </span>
         )}
