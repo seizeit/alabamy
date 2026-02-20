@@ -138,3 +138,11 @@
 - Renders up to 5 HeadlineItems from source.headlines array
 - Created stub `src/components/headline-item.tsx` for build compatibility
 - Build verified: `npm run build` passes
+
+## 4.06 — Create headline-item component
+- Updated `src/components/headline-item.tsx` with full implementation
+- Anchor link opens in new tab with rel="noopener", group hover behavior
+- Georgia serif headline text (font-serif, text-[15px]) with hover:text-crimson transition
+- Relative timestamp helper: just now, Xm ago, Xh ago, yesterday, Xd ago, or "Mon D" for 30+ days
+- Uses published_at with fallback to fetched_at for timestamp display
+- Build verified: `npm run build` passes
