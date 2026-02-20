@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import CategoryNav from "./category-nav";
 import { GeoFilter } from "./geo-filter";
-import { SmartNav } from "./smart-nav";
 
 type CategoryInfo = { name: string; slug: string };
 
@@ -61,8 +60,8 @@ export default function Header({
         </div>
       </header>
 
-      {/* Sticky nav — dropdown left, topic tabs right */}
-      <SmartNav>
+      {/* Sticky nav — always visible so you can see what section you're on */}
+      <nav className="sticky top-0 z-50 bg-porch-dark-light border-b border-porch-tan/20 shadow-lg">
         <div className="max-w-[960px] mx-auto px-4 sm:px-6 py-1.5">
           <div className="flex items-start gap-2">
             <div className="shrink-0 pt-1">
@@ -73,7 +72,7 @@ export default function Header({
             </div>
           </div>
         </div>
-      </SmartNav>
+      </nav>
     </>
   );
 }
