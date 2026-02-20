@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -21,7 +22,10 @@ export default function Footer() {
               hello@alabamy.com &middot; 205-687-TALK
             </p>
             <p className="text-xs text-porch-brown/60 mt-1">
-              &copy; 2026 Alabamy. All rights reserved.
+              &copy; 2026 Alabamy. All rights reserved. &middot;{" "}
+              <Link href="/privacy" className="hover:text-porch-tan transition-colors">
+                Privacy Policy
+              </Link>
             </p>
           </div>
         </div>
