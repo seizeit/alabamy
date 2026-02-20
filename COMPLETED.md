@@ -27,3 +27,10 @@
 - Added base layer with body styles: bg-cream, text-ink, font-sans, antialiased
 - Preserved existing @theme block with custom colors and font stacks
 - Build verified: `npm run build` passes
+
+## 2.01 — Create database schema
+- Created `src/db/schema.ts` with Drizzle ORM table definitions
+- `sources` table: id, name, slug (unique), url, feed_url, feed_type, category, active, last_fetched_at, created_at
+- `headlines` table: id, source_id (FK → sources), title, url (unique for dedup), published_at, fetched_at
+- Added indexes: `idx_headlines_source` on (source_id, published_at), `idx_headlines_fetched` on (fetched_at)
+- Defined relations: sources hasMany headlines, headlines belongsTo source
