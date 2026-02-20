@@ -39,7 +39,7 @@ export default function CategoryNav({
           }
         }
       },
-      { rootMargin: "-100px 0px -60% 0px", threshold: 0 }
+      { rootMargin: "-60px 0px -50% 0px", threshold: 0 }
     );
 
     sections.forEach((el) => observer.observe(el));
