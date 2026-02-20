@@ -34,7 +34,7 @@
 
 ## Phase 5: Homepage
 - [x] **5.01** Create `src/app/page.tsx` — server component with `export const revalidate = 3600`, call getHeadlinesByCategory(), render hero text "Alabama's News, All in One Place" + LastUpdated + all CategorySections in order
-- [ ] **5.02** Verify full page renders — run `npm run build` to check for errors, verify all 10 categories would display correctly in the markup
+- [x] **5.02** Verify full page renders — run `npm run build` to check for errors, verify all 10 categories would display correctly in the markup
 
 ## Phase 6: Polish
 - [ ] **6.01** Final build verification — run `npm run build`, fix any TypeScript or build errors, ensure all links use target="_blank", verify sticky header markup, check category nav has horizontal scroll on mobile, no console errors

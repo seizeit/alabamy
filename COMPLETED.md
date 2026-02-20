@@ -169,3 +169,11 @@
 - Maps all CategorySections in display order with space-y-12 spacing
 - Graceful error handling for DB unavailability during build
 - Build verified: `npm run build` passes
+
+## 5.02 — Verify full page renders
+- `npm run build` passes with zero errors (TypeScript, compilation, static generation all clean)
+- Verified all 10 categories in correct display order in queries.ts CATEGORY_ORDER
+- Confirmed target="_blank" on headline links in headline-item.tsx
+- Confirmed sticky header with z-50 in header.tsx
+- Confirmed category-nav has overflow-x-auto + scrollbar-hide for mobile horizontal scroll
+- All 7 components present: header, category-nav, category-section, source-card, headline-item, footer, last-updated

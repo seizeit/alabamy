@@ -1,0 +1,5 @@
+Task 5.01 complete. Homepage created with ISR (1h revalidation), hero text, LastUpdated badge, and all CategorySections rendered in order. Build passes.
+
+=== POST-TASK BUILD VERIFICATION ===
+./build_loop.sh: line 153: timeout: command not found
+Exit code: 127
