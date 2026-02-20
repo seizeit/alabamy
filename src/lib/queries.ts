@@ -88,11 +88,9 @@ export async function getHeadlinesByTopic(
     },
   });
 
-  // Apply geo filter: show matching geo + statewide sources
+  // Apply geo filter: region = only that region's sources (no statewide mixing)
   const filteredSources = geoFilter && geoFilter !== "all"
-    ? allSources.filter(
-        (s) => s.geo === geoFilter || s.geo === "statewide"
-      )
+    ? allSources.filter((s) => s.geo === geoFilter)
     : allSources;
 
   // Group by topic
@@ -175,11 +173,9 @@ export async function getTopStories(
     },
   });
 
-  // Apply geo filter
+  // Apply geo filter: region = only that region's sources
   const filtered = geoFilter && geoFilter !== "all"
-    ? allSources.filter(
-        (s) => s.geo === geoFilter || s.geo === "statewide"
-      )
+    ? allSources.filter((s) => s.geo === geoFilter)
     : allSources;
 
   // Flatten to individual headlines with source info
