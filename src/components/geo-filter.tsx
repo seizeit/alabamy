@@ -33,7 +33,7 @@ export function GeoFilter({ activeGeo = "all" }: { activeGeo?: string }) {
     <select
       value={activeGeo}
       onChange={(e) => navigate(e.target.value)}
-      className="bg-porch-tan/10 text-porch-tan text-[10px] sm:text-[11px] font-display font-medium border-none rounded px-2 py-1 focus:outline-none focus:ring-1 focus:ring-crimson-500 cursor-pointer"
+      className="bg-white/10 text-white text-[10px] sm:text-[11px] font-display font-medium border-none rounded px-2 py-1 focus:outline-none focus:ring-1 focus:ring-crimson-500 cursor-pointer"
     >
       {REGIONS.map((r) => (
         <option key={r.slug} value={r.slug}>

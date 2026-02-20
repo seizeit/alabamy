@@ -15,15 +15,15 @@ export default function Footer() {
             className="h-10 w-auto"
           />
           <div>
-            <p className="font-serif italic text-porch-tan text-sm">
+            <p className="font-serif italic text-white/70 text-sm">
               Boundless.
             </p>
-            <p className="text-sm text-porch-brown mt-1">
+            <p className="text-sm text-white/60 mt-1">
               hello@alabamy.com &middot; 205-687-TALK
             </p>
-            <p className="text-xs text-porch-brown/60 mt-1">
+            <p className="text-xs text-white/40 mt-1">
               &copy; 2026 Alabamy. All rights reserved. &middot;{" "}
-              <Link href="/privacy" className="hover:text-porch-tan transition-colors">
+              <Link href="/privacy" className="hover:text-white transition-colors">
                 Privacy Policy
               </Link>
             </p>

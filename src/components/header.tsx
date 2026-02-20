@@ -54,24 +54,24 @@ export default function Header({
             priority
           />
         </Link>
-        <span className="hidden sm:block font-serif italic text-porch-tan text-sm tracking-wide">
+        <span className="hidden sm:block font-serif italic text-white/70 text-sm tracking-wide">
           Boundless.
         </span>
       </div>
 
       {/* Nav bar */}
-      <div className="bg-porch-dark-light border-t border-porch-tan/10">
+      <div className="bg-porch-dark-light border-t border-white/10">
         <div className="max-w-[960px] mx-auto px-4 sm:px-6 py-1.5">
           {/* Mobile: dropdown above tabs */}
           <div className="sm:hidden">
-            <div className="pb-1.5 mb-1.5 border-b border-porch-tan/10">
+            <div className="pb-1.5 mb-1.5 border-b border-white/10">
               <GeoFilter activeGeo={activeGeo} />
             </div>
             <CategoryNav categories={categories} />
           </div>
           {/* Desktop: dropdown left, divider, tabs right */}
           <div className="hidden sm:flex items-center">
-            <div className="shrink-0 pr-4 mr-3 border-r border-porch-tan/20">
+            <div className="shrink-0 pr-4 mr-3 border-r border-white/20">
               <GeoFilter activeGeo={activeGeo} />
             </div>
             <div className="flex-1 min-w-0">
@@ -79,7 +79,7 @@ export default function Header({
             </div>
           </div>
           {lastUpdatedAt && (
-            <div className="text-[10px] text-porch-tan/50 font-sans tracking-wide pt-1 pb-0.5 border-t border-porch-tan/10 mt-1.5">
+            <div className="text-[10px] text-white/40 font-sans tracking-wide pt-1 pb-0.5 border-t border-white/10 mt-1.5">
               {formatDateLine(lastUpdatedAt)}
             </div>
           )}

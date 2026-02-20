@@ -61,7 +61,7 @@ export default function CategoryNav({
             className={`px-1.5 sm:px-2 py-0.5 text-[10px] sm:text-[11px] font-display font-medium rounded transition-all ${
               active === cat.slug
                 ? "bg-crimson-500 text-white"
-                : "text-porch-tan/70 hover:bg-porch-tan/10 hover:text-white"
+                : "text-white/70 hover:bg-white/10 hover:text-white"
             }`}
           >
             {label}
