@@ -64,7 +64,7 @@ export async function generateDailyBriefs(): Promise<{
       .innerJoin(sources, eq(headlines.source_id, sources.id))
       .where(and(...conditions));
 
-    if (rows.length < 3) {
+    if (rows.length < 1) {
       skipped++;
       continue;
     }
