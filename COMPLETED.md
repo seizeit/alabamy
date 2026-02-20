@@ -122,3 +122,11 @@
 - IntersectionObserver tracks visible section, highlights active pill with bg-crimson text-white
 - Inactive pills use bg-cream-dark with hover:bg-card-border
 - Build verified: `npm run build` passes
+
+## 4.04 — Create category-section component
+- Created `src/components/category-section.tsx` with CategoryGroup props from queries.ts
+- Renders category heading with Raleway font, crimson border-b-2 bottom border
+- Responsive grid: 1 col mobile, 2 cols tablet (md), 3 cols desktop (lg), gap-5
+- Section uses `id={slug}` for anchor linking with `scroll-mt-24` offset for sticky header
+- Created stub `src/components/source-card.tsx` for build compatibility
+- Build verified: `npm run build` passes

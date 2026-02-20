@@ -26,7 +26,7 @@
 - [x] **4.01** Create `src/app/layout.tsx` — load Inter + Raleway via next/font/google, set metadata (title "Alabamy | Alabama News", description, OG tags), favicon links, render Header + children + Footer
 - [x] **4.02** Create `src/components/header.tsx` — sticky header with dark bg (#111111), alabamy-wordmark.png logo linking to /, CategoryNav below
 - [x] **4.03** Create `src/components/category-nav.tsx` — horizontal scrollable row of pill buttons for 10 categories, linking to #anchor IDs, crimson active state, scrollbar-hide
-- [ ] **4.04** Create `src/components/category-section.tsx` — receives category data, renders heading with crimson border-b-2 + responsive grid (1/2/3 cols) of SourceCards
+- [x] **4.04** Create `src/components/category-section.tsx` — receives category data, renders heading with crimson border-b-2 + responsive grid (1/2/3 cols) of SourceCards
 - [ ] **4.05** Create `src/components/source-card.tsx` — white card with border, source name in crimson uppercase, up to 5 HeadlineItems in a list
 - [ ] **4.06** Create `src/components/headline-item.tsx` — anchor link opening in new tab, Georgia serif headline text with hover:text-crimson, relative timestamp below (2h ago, yesterday, 3d ago)
 - [ ] **4.07** Create `src/components/footer.tsx` — dark bg, alabamy-icon.png, contact info (mike@alabamy.com, 205-687-TALK), copyright 2026 Alabamy Boundless
