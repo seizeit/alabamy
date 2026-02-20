@@ -1,7 +1,7 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { db } from "@/db";
 import { headlines, sources, dailyBriefs } from "@/db/schema";
-import { eq, and, gte, isNotNull, sql } from "drizzle-orm";
+import { eq, and, gte, isNotNull, desc } from "drizzle-orm";
 import { GEO_OPTIONS } from "@/lib/constants";
 import { ALL_TOPICS } from "@/lib/queries";
 
@@ -41,18 +41,23 @@ export async function generateDailyBriefs(): Promise<{
   let generated = 0;
   let skipped = 0;
 
-  for (const geoOption of GEO_OPTIONS) {
+  // Process regional briefs first (smaller, faster), then "all" last
+  const geoOrder = [...GEO_OPTIONS].sort((a, b) =>
+    a.slug === "all" ? 1 : b.slug === "all" ? -1 : 0
+  );
+
+  for (const geoOption of geoOrder) {
     const geo = geoOption.slug;
 
-    // Fetch today's classified headlines for this region
-    const conditions = [
-      isNotNull(headlines.topic),
-      gte(headlines.fetched_at, today),
-    ];
-
-    if (geo !== "all") {
-      conditions.push(eq(sources.geo, geo));
-    }
+    // Fetch today's classified headlines for this region (limit 50 most recent)
+    const baseWhere =
+      geo === "all"
+        ? and(isNotNull(headlines.topic), gte(headlines.fetched_at, today))
+        : and(
+            isNotNull(headlines.topic),
+            gte(headlines.fetched_at, today),
+            eq(sources.geo, geo)
+          );
 
     const rows = await db
       .select({
@@ -62,10 +67,14 @@ export async function generateDailyBriefs(): Promise<{
       })
       .from(headlines)
       .innerJoin(sources, eq(headlines.source_id, sources.id))
-      .where(and(...conditions));
+      .where(baseWhere)
+      .orderBy(desc(headlines.fetched_at))
+      .limit(50);
 
-    console.log(`[briefs] ${geo}: ${rows.length} headlines (today=${today})`);
-    if (rows.length < 1) {
+    const totalCount = rows.length;
+    console.log(`[briefs] ${geo}: ${totalCount} headlines (today=${today})`);
+
+    if (totalCount < 1) {
       skipped++;
       continue;
     }
@@ -112,14 +121,14 @@ export async function generateDailyBriefs(): Promise<{
             geo,
             date: today,
             summary,
-            headline_count: rows.length,
+            headline_count: totalCount,
             generated_at: new Date().toISOString(),
           })
           .onConflictDoUpdate({
             target: [dailyBriefs.geo, dailyBriefs.date],
             set: {
               summary,
-              headline_count: rows.length,
+              headline_count: totalCount,
               generated_at: new Date().toISOString(),
             },
           });
@@ -129,13 +138,14 @@ export async function generateDailyBriefs(): Promise<{
         skipped++;
       }
     } catch (err) {
-      console.error(`[briefs] ${geo} failed:`, err instanceof Error ? err.message : err);
+      console.error(
+        `[briefs] ${geo} failed:`,
+        err instanceof Error ? err.message : err
+      );
       skipped++;
     }
   }
 
-  console.log(
-    `Generated ${generated} daily briefs (${skipped} skipped)`
-  );
+  console.log(`Generated ${generated} daily briefs (${skipped} skipped)`);
   return { generated, skipped };
 }
