@@ -92,7 +92,7 @@ export async function generateDailyBriefs(): Promise<{
 
     try {
       const response = await client.messages.create({
-        model: "claude-sonnet-4-6",
+        model: "claude-haiku-4-5-20251001",
         max_tokens: 1024,
         messages: [
           {
@@ -124,9 +124,12 @@ export async function generateDailyBriefs(): Promise<{
             },
           });
         generated++;
+      } else {
+        console.error(`[briefs] ${geo}: empty summary from API`);
+        skipped++;
       }
     } catch (err) {
-      console.error(`Brief generation failed for ${geo}:`, err);
+      console.error(`[briefs] ${geo} failed:`, err instanceof Error ? err.message : err);
       skipped++;
     }
   }
