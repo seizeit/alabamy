@@ -21,3 +21,9 @@
 - Configured Inter (sans) and Raleway (display) via `next/font/google` with CSS variables in layout.tsx
 - Set font-serif to Georgia in @theme
 - Build verified: `npm run build` passes
+
+## 1.05 — Write globals.css with full styles
+- Added scrollbar-hide utility using @utility directive (hides scrollbar cross-browser)
+- Added base layer with body styles: bg-cream, text-ink, font-sans, antialiased
+- Preserved existing @theme block with custom colors and font stacks
+- Build verified: `npm run build` passes

@@ -16,3 +16,17 @@
   --font-display: var(--font-raleway), ui-sans-serif, system-ui, sans-serif;
   --font-serif: Georgia, "Times New Roman", Times, serif;
 }
+
+@utility scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-cream text-ink font-sans antialiased;
+  }
+}

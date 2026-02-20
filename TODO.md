@@ -5,7 +5,7 @@
 - [x] **1.02** Install dependencies: `npm install drizzle-orm @libsql/client rss-parser @mendable/firecrawl-js` and `npm install -D drizzle-kit tsx`
 - [x] **1.03** Create `.env.local` with TURSO_DATABASE_URL, TURSO_AUTH_TOKEN, FIRECRAWL_API_KEY, and CRON_SECRET placeholders. Verify assets exist in `public/` (alabamy-wordmark.png, alabamy-icon.png, apple-touch-icon.png, favicon-32x32.png, favicon-16x16.png)
 - [x] **1.04** Configure Tailwind theme — extend with custom colors (cream, cream-dark, card-border, ink, ink-secondary, ink-muted, crimson, crimson-dark, header-bg, header-text), add Inter + Raleway fonts via next/font/google with CSS variables, set font-serif to Georgia
-- [ ] **1.05** Write `src/app/globals.css` with Tailwind directives, custom font-face variables, scrollbar-hide utility, and base body styles (bg-cream, text-ink, font-sans)
+- [x] **1.05** Write `src/app/globals.css` with Tailwind directives, custom font-face variables, scrollbar-hide utility, and base body styles (bg-cream, text-ink, font-sans)
 
 ## Phase 2: Database & Data Layer
 - [ ] **2.01** Create `src/db/schema.ts` — Drizzle table definitions for `sources` (id, name, slug, url, feed_url, feed_type, category, active, last_fetched_at, created_at) and `headlines` (id, source_id, title, url, published_at, fetched_at) with indexes and relations
