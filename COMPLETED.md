@@ -34,3 +34,7 @@
 - `headlines` table: id, source_id (FK → sources), title, url (unique for dedup), published_at, fetched_at
 - Added indexes: `idx_headlines_source` on (source_id, published_at), `idx_headlines_fetched` on (fetched_at)
 - Defined relations: sources hasMany headlines, headlines belongsTo source
+
+## 2.02 — Create database client
+- Created `src/db/index.ts` with Turso client via `@libsql/client` using TURSO_DATABASE_URL and TURSO_AUTH_TOKEN env vars
+- Exported Drizzle ORM instance with schema for type-safe queries
