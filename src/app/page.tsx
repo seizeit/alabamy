@@ -34,28 +34,16 @@ export default async function Home({
     // DB unavailable during build
   }
 
-  // Nav reflects whatever topics have content for the selected geo
   const navCategories = topics.map((t) => ({
     name: t.name,
     slug: t.slug,
   }));
-
-  const headlineCount = topics.reduce(
-    (sum, t) => sum + t.sources.reduce((s, src) => s + src.headlines.length, 0),
-    0
-  );
-
-  const sourceCount = new Set(
-    topics.flatMap((t) => t.sources.map((s) => s.id))
-  ).size;
 
   return (
     <>
       <Header
         categories={navCategories}
         activeGeo={activeGeo}
-        headlineCount={headlineCount}
-        sourceCount={sourceCount}
       />
       <main>
         <div className="max-w-[960px] mx-auto px-4 sm:px-6 py-8 sm:py-12">
