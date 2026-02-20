@@ -44,6 +44,7 @@ export default async function Home({
       <Header
         categories={navCategories}
         activeGeo={activeGeo}
+        lastUpdatedAt={lastUpdatedAt}
       />
       <main>
         <div className="max-w-[960px] mx-auto px-4 sm:px-6 py-8 sm:py-12">

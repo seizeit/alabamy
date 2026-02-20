@@ -5,12 +5,32 @@ import { GeoFilter } from "./geo-filter";
 
 type CategoryInfo = { name: string; slug: string };
 
+function formatDateLine(timestamp: string): string {
+  const date = new Date(timestamp);
+  if (isNaN(date.getTime())) return "";
+  const day = date.toLocaleDateString("en-US", {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "America/Chicago",
+  });
+  const time = date.toLocaleTimeString("en-US", {
+    hour: "numeric",
+    minute: "2-digit",
+    timeZone: "America/Chicago",
+  });
+  return `${day} — Updated ${time} CT`;
+}
+
 export default function Header({
   categories = [],
   activeGeo = "all",
+  lastUpdatedAt,
 }: {
   categories?: CategoryInfo[];
   activeGeo?: string;
+  lastUpdatedAt?: string | null;
 }) {
   return (
     <>
@@ -60,6 +80,11 @@ export default function Header({
               <CategoryNav categories={categories} />
             </div>
           </div>
+          {lastUpdatedAt && (
+            <div className="text-[10px] text-porch-tan/50 font-sans tracking-wide pt-1 pb-0.5 border-t border-porch-tan/10 mt-1.5">
+              {formatDateLine(lastUpdatedAt)}
+            </div>
+          )}
         </div>
       </nav>
     </>
