@@ -2,7 +2,8 @@ import { db } from "@/db";
 import { sources, sourceTopics, headlines } from "@/db/schema";
 import { eq, desc, max, and, or, inArray } from "drizzle-orm";
 
-const TOPIC_ORDER = [
+// Fixed list of all topics — used for nav (never changes based on filter)
+export const ALL_TOPICS = [
   { slug: "politics", name: "Politics & Government" },
   { slug: "crime", name: "Crime & Courts" },
   { slug: "sports", name: "Sports" },
@@ -14,6 +15,8 @@ const TOPIC_ORDER = [
   { slug: "culture", name: "Culture & Life" },
   { slug: "weather", name: "Weather & Environment" },
 ] as const;
+
+const TOPIC_ORDER = ALL_TOPICS;
 
 // Tier determines how many headlines to show per source
 const TIER_1_TOPICS = new Set(["politics", "crime", "sports"]);

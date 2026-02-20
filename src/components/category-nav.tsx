@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 
 type CategoryInfo = { name: string; slug: string };
 
-// Short labels that fit in compact tabs
 const SHORT_NAMES: Record<string, string> = {
   "Politics & Government": "Politics",
   "Crime & Courts": "Crime",
@@ -19,7 +18,7 @@ const SHORT_NAMES: Record<string, string> = {
 export default function CategoryNav({
   categories,
 }: {
-  categories: CategoryInfo[];
+  categories: readonly CategoryInfo[];
 }) {
   const [active, setActive] = useState<string>("");
 
@@ -50,7 +49,7 @@ export default function CategoryNav({
   if (categories.length === 0) return null;
 
   return (
-    <div className="flex flex-wrap gap-1 py-2">
+    <div className="flex flex-wrap gap-x-0.5 gap-y-0.5 py-1">
       {categories.map((cat) => {
         const label = SHORT_NAMES[cat.name] || cat.name;
         return (
@@ -58,10 +57,10 @@ export default function CategoryNav({
             key={cat.slug}
             href={`#${cat.slug}`}
             data-slug={cat.slug}
-            className={`px-2.5 py-1 text-[11px] sm:text-xs font-display font-medium rounded transition-all ${
+            className={`px-1.5 sm:px-2 py-0.5 text-[10px] sm:text-[11px] font-display font-medium rounded transition-all ${
               active === cat.slug
                 ? "bg-crimson-500 text-white"
-                : "bg-porch-tan/10 text-porch-tan/80 hover:bg-porch-tan/20 hover:text-white"
+                : "text-porch-tan/70 hover:bg-porch-tan/10 hover:text-white"
             }`}
           >
             {label}

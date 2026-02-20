@@ -12,7 +12,7 @@ export default function Header({
   headlineCount = 0,
   sourceCount = 44,
 }: {
-  categories?: CategoryInfo[];
+  categories?: readonly CategoryInfo[];
   activeGeo?: string;
   headlineCount?: number;
   sourceCount?: number;
@@ -61,16 +61,14 @@ export default function Header({
         </div>
       </header>
 
-      {/* Sticky nav — topics are primary, region dropdown is secondary */}
+      {/* Sticky nav */}
       <SmartNav>
-        <div className="max-w-[960px] mx-auto px-4 sm:px-6">
-          <div className="flex items-center gap-4">
-            {/* Topic tabs — primary nav, takes up available space */}
+        <div className="max-w-[960px] mx-auto px-4 sm:px-6 py-1.5">
+          <div className="flex items-start gap-2">
             <div className="flex-1 min-w-0">
               <CategoryNav categories={categories} />
             </div>
-            {/* Region dropdown — secondary, sits to the right */}
-            <div className="shrink-0">
+            <div className="shrink-0 pt-1">
               <GeoFilter activeGeo={activeGeo} />
             </div>
           </div>

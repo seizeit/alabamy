@@ -27,16 +27,16 @@ export function GeoFilter({ activeGeo = "all" }: { activeGeo?: string }) {
   }
 
   const isFiltered = activeGeo !== "all";
+  const activeLabel = REGIONS.find((r) => r.slug === activeGeo)?.label;
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-1.5">
       <select
         value={isFiltered ? activeGeo : ""}
         onChange={(e) => navigate(e.target.value || "all")}
-        className="bg-transparent text-porch-tan text-xs font-medium border border-porch-tan/30 rounded px-2 py-1 focus:outline-none focus:border-crimson-500 appearance-none cursor-pointer pr-6"
-        style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23D9CEBF' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E\")", backgroundRepeat: "no-repeat", backgroundPosition: "right 6px center" }}
+        className="bg-porch-tan/10 text-porch-tan text-[10px] sm:text-[11px] font-medium border-none rounded px-2 py-1 focus:outline-none focus:ring-1 focus:ring-crimson-500 cursor-pointer"
       >
-        <option value="">Region...</option>
+        <option value="">Region</option>
         {REGIONS.map((r) => (
           <option key={r.slug} value={r.slug}>
             {r.label}
@@ -46,7 +46,7 @@ export function GeoFilter({ activeGeo = "all" }: { activeGeo?: string }) {
       {isFiltered && (
         <button
           onClick={() => navigate("all")}
-          className="text-porch-tan/60 hover:text-white text-xs transition-colors"
+          className="text-porch-tan/50 hover:text-white text-xs leading-none transition-colors"
           aria-label="Clear region filter"
         >
           &times;
