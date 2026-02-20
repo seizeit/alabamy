@@ -18,7 +18,7 @@ export default function Footer() {
               Boundless.
             </p>
             <p className="text-sm text-porch-brown mt-1">
-              mike@alabamy.com &middot; 205-687-TALK
+              hello@alabamy.com &middot; 205-687-TALK
             </p>
             <p className="text-xs text-porch-brown/60 mt-1">
               &copy; 2026 Alabamy. All rights reserved.
