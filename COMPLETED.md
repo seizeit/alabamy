@@ -114,3 +114,11 @@
 - Created `src/components/category-nav.tsx` stub with all 10 category pill links
 - CategoryNav renders horizontally scrollable pills with anchor links to #category sections
 - Build verified: `npm run build` passes
+
+## 4.03 — Create category-nav with active state
+- Implemented `src/components/category-nav.tsx` as client component
+- Horizontal scrollable row of 10 category pill buttons with scrollbar-hide
+- Pills link to #anchor IDs matching category slugs
+- IntersectionObserver tracks visible section, highlights active pill with bg-crimson text-white
+- Inactive pills use bg-cream-dark with hover:bg-card-border
+- Build verified: `npm run build` passes
