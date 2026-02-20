@@ -33,7 +33,7 @@ export default function Header({
   lastUpdatedAt?: string | null;
 }) {
   return (
-    <header className="sticky top-0 z-50 bg-porch-dark text-porch-cream shadow-lg">
+    <header className="sticky top-0 z-50 bg-gray-900 text-white shadow-lg">
       {/* Logo bar */}
       <div className="max-w-[960px] mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5">
@@ -60,7 +60,7 @@ export default function Header({
       </div>
 
       {/* Nav bar */}
-      <div className="bg-porch-dark-light border-t border-white/10">
+      <div className="bg-gray-950 border-t border-white/10">
         <div className="max-w-[960px] mx-auto px-4 sm:px-6 py-1.5">
           {/* Mobile: dropdown above tabs */}
           <div className="sm:hidden">

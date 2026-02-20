@@ -21,7 +21,7 @@ export function RegionSection({
 
   return (
     <div className="max-w-[960px] mx-auto px-4 sm:px-6 py-8 sm:py-12">
-      <h1 className="font-display text-xl sm:text-2xl font-bold text-warm-900 mb-8">
+      <h1 className="font-display text-xl sm:text-2xl font-bold text-gray-900 mb-8">
         News from {regionName}
       </h1>
 
@@ -30,10 +30,10 @@ export function RegionSection({
           {/* Topic label — just a visual grouping, not navigable */}
           <div className="flex items-center gap-3 mb-4">
             <span className="text-crimson-500 text-xs">&loz;</span>
-            <h2 className="font-display text-sm font-semibold text-porch-brown uppercase tracking-wider">
+            <h2 className="font-display text-sm font-semibold text-gray-500 uppercase tracking-wider">
               {topic.name}
             </h2>
-            <div className="h-px flex-1 bg-porch-tan/40" />
+            <div className="h-px flex-1 bg-gray-200" />
           </div>
 
           {/* All sources for this topic, flat list */}
@@ -48,7 +48,7 @@ export function RegionSection({
       ))}
 
       {topics.length === 0 && (
-        <p className="text-porch-brown text-sm">
+        <p className="text-gray-500 text-sm">
           No headlines available for {regionName} right now.
         </p>
       )}

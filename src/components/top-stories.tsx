@@ -26,8 +26,8 @@ export function TopStories({ stories }: { stories: TopStory[] }) {
   const [lead, ...rest] = stories;
 
   return (
-    <section className="mb-12 pb-12 border-b border-dashed border-porch-tan">
-      <h2 className="font-display text-xs uppercase tracking-[0.2em] text-porch-brown mb-6">
+    <section className="mb-12 pb-12 border-b border-dashed border-gray-200">
+      <h2 className="font-display text-xs uppercase tracking-[0.2em] text-gray-500 mb-6">
         Today&apos;s Lead
       </h2>
 
@@ -41,10 +41,10 @@ export function TopStories({ stories }: { stories: TopStory[] }) {
         <span className="text-xs font-sans font-semibold uppercase tracking-wider text-crimson-500">
           {lead.source_name}
         </span>
-        <h3 className="font-serif text-2xl sm:text-3xl lg:text-[2.25rem] leading-tight font-medium text-warm-900 group-hover:text-crimson-600 transition-colors mt-2">
+        <h3 className="font-serif text-2xl sm:text-3xl lg:text-[2.25rem] leading-tight font-medium text-gray-900 group-hover:text-crimson-600 transition-colors mt-2">
           {lead.title}
         </h3>
-        <span className="block text-sm text-porch-brown mt-2">
+        <span className="block text-sm text-gray-400 mt-2">
           {relativeTime(lead.published_at ?? lead.fetched_at)}
         </span>
       </a>
@@ -62,10 +62,10 @@ export function TopStories({ stories }: { stories: TopStory[] }) {
             <span className="text-xs font-sans font-semibold uppercase tracking-wider text-crimson-500">
               {story.source_name}
             </span>
-            <h3 className="font-serif text-lg leading-snug font-medium text-warm-900 group-hover:text-crimson-600 transition-colors mt-1">
+            <h3 className="font-serif text-lg leading-snug font-medium text-gray-900 group-hover:text-crimson-600 transition-colors mt-1">
               {story.title}
             </h3>
-            <span className="block text-xs text-porch-brown mt-1">
+            <span className="block text-xs text-gray-400 mt-1">
               {relativeTime(story.published_at ?? story.fetched_at)}
             </span>
           </a>

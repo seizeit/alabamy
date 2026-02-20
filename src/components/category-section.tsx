@@ -8,7 +8,7 @@ export function CategorySection({
   topic: TopicGroup;
   alternate?: boolean;
 }) {
-  const bgClass = alternate ? "bg-porch-warm" : "bg-porch-cream";
+  const bgClass = alternate ? "bg-gray-50" : "bg-white";
 
   return (
     <section
@@ -16,15 +16,15 @@ export function CategorySection({
       className={`scroll-mt-36 ${bgClass} px-4 sm:px-6 py-10 sm:py-12`}
     >
       <div className="max-w-[960px] mx-auto">
-        {/* Decorative section header */}
+        {/* Section header */}
         <div className="flex items-center gap-4 mb-8">
-          <div className="h-px flex-1 bg-porch-tan" />
-          <h2 className="font-display text-lg sm:text-xl font-semibold text-warm-900 tracking-tight flex items-center gap-2">
+          <div className="h-px flex-1 bg-gray-200" />
+          <h2 className="font-display text-lg sm:text-xl font-semibold text-gray-900 tracking-tight flex items-center gap-2">
             <span className="text-crimson-500">&loz;</span>
             {topic.name}
             <span className="text-crimson-500">&loz;</span>
           </h2>
-          <div className="h-px flex-1 bg-porch-tan" />
+          <div className="h-px flex-1 bg-gray-200" />
         </div>
 
         {/* Sources — two column on desktop, single on mobile */}

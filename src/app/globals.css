@@ -13,36 +13,18 @@
   --color-crimson-800: #5A0D1B;
   --color-crimson-900: #3D0912;
 
-  /* Gold accent */
-  --color-gold-50: #FFFBF0;
-  --color-gold-100: #FFF3D6;
-  --color-gold-200: #FFE4A8;
-  --color-gold-300: #FFD074;
-  --color-gold-400: #F5B638;
-  --color-gold-500: #D99B1E;
-  --color-gold-600: #B07D15;
-
-  /* Porch warm tones */
-  --color-porch-cream: #FFFDF8;
-  --color-porch-warm: #F7F3ED;
-  --color-porch-tan: #D9CEBF;
-  --color-porch-brown: #4A4A46;
-  --color-porch-dark: #111111;
-  --color-porch-dark-light: #1A1A1A;
-  --color-porch-burnt: #D4652A;
-
-  /* Warm neutrals (kept for compatibility) */
-  --color-warm-50: #FFFDF8;
-  --color-warm-100: #F7F3ED;
-  --color-warm-200: #F0EDE7;
-  --color-warm-300: #EBE8E2;
-  --color-warm-400: #D9CEBF;
-  --color-warm-500: #B5B1A9;
-  --color-warm-600: #4A4A46;
-  --color-warm-700: #2A2A28;
-  --color-warm-800: #1A1A1A;
-  --color-warm-900: #111111;
-  --color-warm-950: #0A0A0A;
+  /* Gray scale */
+  --color-gray-50: #FAFAFA;
+  --color-gray-100: #F5F5F5;
+  --color-gray-200: #E5E5E5;
+  --color-gray-300: #D4D4D4;
+  --color-gray-400: #A3A3A3;
+  --color-gray-500: #737373;
+  --color-gray-600: #525252;
+  --color-gray-700: #404040;
+  --color-gray-800: #262626;
+  --color-gray-900: #171717;
+  --color-gray-950: #0A0A0A;
 
   /* Fonts */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
@@ -60,6 +42,6 @@
 
 @layer base {
   body {
-    @apply bg-porch-cream text-warm-900 font-sans antialiased;
+    @apply bg-white text-gray-900 font-sans antialiased;
   }
 }

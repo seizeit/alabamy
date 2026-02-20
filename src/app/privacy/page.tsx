@@ -15,16 +15,16 @@ export default function PrivacyPolicy() {
       </Suspense>
       <main>
         <div className="max-w-[960px] mx-auto px-4 sm:px-6 py-10 sm:py-16">
-          <h1 className="font-display text-3xl sm:text-4xl font-semibold text-warm-900 mb-2">
+          <h1 className="font-display text-3xl sm:text-4xl font-semibold text-gray-900 mb-2">
             Privacy Policy
           </h1>
-          <p className="text-sm text-porch-brown mb-10">
+          <p className="text-sm text-gray-500 mb-10">
             Last updated: February 20, 2026
           </p>
 
-          <div className="prose prose-warm max-w-none space-y-8 text-[15px] leading-relaxed text-warm-800">
+          <div className="prose prose-gray max-w-none space-y-8 text-[15px] leading-relaxed text-gray-700">
             <section>
-              <h2 className="font-display text-xl font-semibold text-warm-900 mb-3">
+              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3">
                 What Alabamy Is
               </h2>
               <p>
@@ -37,7 +37,7 @@ export default function PrivacyPolicy() {
             </section>
 
             <section>
-              <h2 className="font-display text-xl font-semibold text-warm-900 mb-3">
+              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3">
                 Information We Collect
               </h2>
               <p>
@@ -63,7 +63,7 @@ export default function PrivacyPolicy() {
             </section>
 
             <section>
-              <h2 className="font-display text-xl font-semibold text-warm-900 mb-3">
+              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3">
                 Cookies
               </h2>
               <p>
@@ -84,7 +84,7 @@ export default function PrivacyPolicy() {
             </section>
 
             <section>
-              <h2 className="font-display text-xl font-semibold text-warm-900 mb-3">
+              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3">
                 External Links
               </h2>
               <p>
@@ -98,7 +98,7 @@ export default function PrivacyPolicy() {
             </section>
 
             <section>
-              <h2 className="font-display text-xl font-semibold text-warm-900 mb-3">
+              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3">
                 How We Use Information
               </h2>
               <p>
@@ -117,7 +117,7 @@ export default function PrivacyPolicy() {
             </section>
 
             <section>
-              <h2 className="font-display text-xl font-semibold text-warm-900 mb-3">
+              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3">
                 Data Retention
               </h2>
               <p>
@@ -129,7 +129,7 @@ export default function PrivacyPolicy() {
             </section>
 
             <section>
-              <h2 className="font-display text-xl font-semibold text-warm-900 mb-3">
+              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3">
                 Children&apos;s Privacy
               </h2>
               <p>
@@ -141,7 +141,7 @@ export default function PrivacyPolicy() {
             </section>
 
             <section>
-              <h2 className="font-display text-xl font-semibold text-warm-900 mb-3">
+              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3">
                 Do Not Track
               </h2>
               <p>
@@ -153,7 +153,7 @@ export default function PrivacyPolicy() {
             </section>
 
             <section>
-              <h2 className="font-display text-xl font-semibold text-warm-900 mb-3">
+              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3">
                 Changes to This Policy
               </h2>
               <p>
@@ -165,7 +165,7 @@ export default function PrivacyPolicy() {
             </section>
 
             <section>
-              <h2 className="font-display text-xl font-semibold text-warm-900 mb-3">
+              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3">
                 Contact
               </h2>
               <p>
@@ -182,7 +182,7 @@ export default function PrivacyPolicy() {
             </section>
 
             <section>
-              <h2 className="font-display text-xl font-semibold text-warm-900 mb-3">
+              <h2 className="font-display text-xl font-semibold text-gray-900 mb-3">
                 Governing Law
               </h2>
               <p>

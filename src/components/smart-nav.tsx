@@ -28,7 +28,7 @@ export function SmartNav({ children }: { children: React.ReactNode }) {
 
   return (
     <nav
-      className={`sticky top-0 z-50 bg-porch-dark-light border-b border-porch-tan/20 shadow-lg transition-transform duration-300 ${
+      className={`sticky top-0 z-50 bg-gray-950 border-b border-white/10 shadow-lg transition-transform duration-300 ${
         visible ? "translate-y-0" : "-translate-y-full"
       }`}
     >

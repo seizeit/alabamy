@@ -38,14 +38,14 @@ export function HeadlineItem({
         className="group block"
       >
         <span
-          className={`leading-snug font-serif text-warm-900 group-hover:text-crimson-600 transition-colors ${
+          className={`leading-snug font-serif text-gray-900 group-hover:text-crimson-600 transition-colors ${
             large ? "text-lg sm:text-xl font-medium" : "text-[15px]"
           }`}
         >
           {headline.title}
         </span>
         {timestamp && (
-          <span className="inline-block text-xs text-porch-brown ml-2">
+          <span className="inline-block text-xs text-gray-400 ml-2">
             {timestamp}
           </span>
         )}
