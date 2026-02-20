@@ -1,0 +1,5 @@
+Task 4.08 complete. Created `last-updated.tsx` badge component and `getLastUpdatedAt()` query. Build passes.
+
+=== POST-TASK BUILD VERIFICATION ===
+./build_loop.sh: line 153: timeout: command not found
+Exit code: 127

@@ -33,7 +33,7 @@
 - [x] **4.08** Create `src/components/last-updated.tsx` — small badge showing "Last updated: [relative time]" using most recent headline fetched_at
 
 ## Phase 5: Homepage
-- [ ] **5.01** Create `src/app/page.tsx` — server component with `export const revalidate = 3600`, call getHeadlinesByCategory(), render hero text "Alabama's News, All in One Place" + LastUpdated + all CategorySections in order
+- [x] **5.01** Create `src/app/page.tsx` — server component with `export const revalidate = 3600`, call getHeadlinesByCategory(), render hero text "Alabama's News, All in One Place" + LastUpdated + all CategorySections in order
 - [ ] **5.02** Verify full page renders — run `npm run build` to check for errors, verify all 10 categories would display correctly in the markup
 
 ## Phase 6: Polish

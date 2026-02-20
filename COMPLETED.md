@@ -160,3 +160,12 @@
 - Added `getLastUpdatedAt()` query to `src/lib/queries.ts` using `max(headlines.fetched_at)`
 - Relative time helper: just now, Xm ago, Xh ago, yesterday, Xd ago, or "Mon D"
 - Build verified: `npm run build` passes
+
+## 5.01 — Create homepage server component
+- Replaced placeholder `src/app/page.tsx` with full homepage implementation
+- Server component with `export const revalidate = 3600` (ISR, 1 hour)
+- Calls `getHeadlinesByCategory()` and `getLastUpdatedAt()` in parallel via Promise.all
+- Renders hero heading "Alabama's News, All in One Place" + LastUpdated badge
+- Maps all CategorySections in display order with space-y-12 spacing
+- Graceful error handling for DB unavailability during build
+- Build verified: `npm run build` passes
