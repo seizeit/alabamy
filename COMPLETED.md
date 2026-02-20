@@ -81,3 +81,11 @@
 - For each source, keeps max 20 most recent headlines by fetched_at
 - Deletes older headlines beyond the limit
 - Returns `{ deletedCount }` for reporting
+
+## 3.04 — Create cron API route
+- Created `src/app/api/cron/fetch-feeds/route.ts` with GET handler
+- Bearer auth via CRON_SECRET environment variable
+- Orchestrates: query active sources → fetchRssFeeds → fetchFirecrawlFeeds → pruneHeadlines → revalidatePath("/")
+- Returns JSON summary with RSS/Firecrawl results, prune count, and source counts
+- Sets `maxDuration = 300` for Vercel long-running function support
+- Error handling returns 500 with logged error
