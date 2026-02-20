@@ -13,7 +13,7 @@ export function CategorySection({
   return (
     <section
       id={topic.slug}
-      className={`scroll-mt-16 ${bgClass} -mx-4 px-4 sm:-mx-6 sm:px-6 py-10 sm:py-12`}
+      className={`scroll-mt-16 ${bgClass} px-4 sm:px-6 py-10 sm:py-12`}
     >
       <div className="max-w-[960px] mx-auto">
         {/* Decorative section header */}
