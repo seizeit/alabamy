@@ -1,0 +1,5 @@
+Task 2.05 complete. Created `src/lib/queries.ts` with `getHeadlinesByCategory()` — groups sources by 10 categories in display order, limits 5 headlines per source, handles Auburn Newsroom sports override.
+
+=== POST-TASK BUILD VERIFICATION ===
+./build_loop.sh: line 153: timeout: command not found
+Exit code: 127

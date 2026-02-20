@@ -15,7 +15,7 @@
 - [x] **2.05** Create `src/lib/queries.ts` — export `getHeadlinesByCategory()` that returns sources grouped by 10 categories in display order, each source with up to 5 most recent headlines, only active sources with at least 1 headline
 
 ## Phase 3: Feed Fetching
-- [ ] **3.01** Create `src/lib/fetchers/rss-fetcher.ts` — parse RSS feeds with rss-parser, batch 10 at a time via `Promise.allSettled`, insert headlines with `onConflictDoNothing` on url, update source last_fetched_at
+- [x] **3.01** Create `src/lib/fetchers/rss-fetcher.ts` — parse RSS feeds with rss-parser, batch 10 at a time via `Promise.allSettled`, insert headlines with `onConflictDoNothing` on url, update source last_fetched_at
 - [ ] **3.02** Create `src/lib/fetchers/firecrawl-fetcher.ts` — scrape with Firecrawl SDK (`@mendable/firecrawl-js`), extract headlines from markdown using regex for `[text](url)` patterns, filter out nav/footer links, sequential processing, insert with onConflictDoNothing
 - [ ] **3.03** Create `src/lib/fetchers/pruner.ts` — for each source keep max 20 most recent headlines (by fetched_at), delete older ones
 - [ ] **3.04** Create `src/app/api/cron/fetch-feeds/route.ts` — GET handler with CRON_SECRET Bearer auth, orchestrates: fetch RSS sources → fetch Firecrawl sources → prune → revalidatePath("/"), returns JSON summary, set maxDuration=300

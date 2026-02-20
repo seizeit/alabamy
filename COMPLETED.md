@@ -59,3 +59,10 @@
 - Handles Auburn Newsroom special case: stored as category "auburn" but displayed in Sports
 - Uses Drizzle relational queries with proper typing
 - TypeScript compiles cleanly
+
+## 3.01 — Create RSS fetcher
+- Created `src/lib/fetchers/rss-fetcher.ts` with rss-parser integration
+- Exports `fetchRssFeeds()` that batches 10 feeds at a time via `Promise.allSettled`
+- Inserts headlines with `onConflictDoNothing` on url for deduplication
+- Updates source `last_fetched_at` after successful fetch
+- Returns `{ success, failed }` counts for reporting
