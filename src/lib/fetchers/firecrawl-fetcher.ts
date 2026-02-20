@@ -5,9 +5,11 @@ import { eq } from "drizzle-orm";
 
 type FirecrawlSource = typeof sources.$inferSelect;
 
-const firecrawl = new FirecrawlApp({
-  apiKey: process.env.FIRECRAWL_API_KEY ?? "",
-});
+function getFirecrawlClient() {
+  const apiKey = process.env.FIRECRAWL_API_KEY;
+  if (!apiKey) throw new Error("FIRECRAWL_API_KEY not set");
+  return new FirecrawlApp({ apiKey });
+}
 
 // Common nav/footer link patterns to filter out
 const SKIP_PATTERNS = [
@@ -84,6 +86,7 @@ function extractHeadlines(
 }
 
 async function fetchSingleFirecrawl(source: FirecrawlSource): Promise<number> {
+  const firecrawl = getFirecrawlClient();
   const response = await firecrawl.scrape(source.url, {
     formats: ["markdown"],
   });

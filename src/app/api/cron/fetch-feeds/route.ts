@@ -7,6 +7,7 @@ import { fetchRssFeeds } from "@/lib/fetchers/rss-fetcher";
 import { fetchFirecrawlFeeds } from "@/lib/fetchers/firecrawl-fetcher";
 import { pruneHeadlines } from "@/lib/fetchers/pruner";
 
+export const dynamic = "force-dynamic";
 export const maxDuration = 300;
 
 export async function GET(request: NextRequest) {
