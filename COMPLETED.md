@@ -106,3 +106,11 @@
 - Created stub `src/components/header.tsx` (sticky dark header with wordmark)
 - Created stub `src/components/footer.tsx` (dark footer with icon, contact, copyright)
 - Build verified: `npm run build` passes
+
+## 4.02 — Create header component with CategoryNav
+- Enhanced `src/components/header.tsx` with Next.js Image + Link components
+- Sticky dark header (#111111) with alabamy-wordmark.png logo linking to /
+- Image uses priority loading, proper width/height attributes
+- Created `src/components/category-nav.tsx` stub with all 10 category pill links
+- CategoryNav renders horizontally scrollable pills with anchor links to #category sections
+- Build verified: `npm run build` passes

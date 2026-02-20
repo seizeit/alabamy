@@ -1,0 +1,5 @@
+Task 4.01 complete. Layout updated with full metadata, OG/Twitter tags, favicon links, and Header + Footer wrapping children. Build passes.
+
+=== POST-TASK BUILD VERIFICATION ===
+./build_loop.sh: line 153: timeout: command not found
+Exit code: 127
