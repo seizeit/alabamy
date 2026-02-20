@@ -61,11 +61,19 @@ export default function Header({
         </div>
       </header>
 
-      {/* Smart sticky nav — hides on scroll down, shows on scroll up */}
+      {/* Sticky nav — topics are primary, region dropdown is secondary */}
       <SmartNav>
         <div className="max-w-[960px] mx-auto px-4 sm:px-6">
-          <GeoFilter activeGeo={activeGeo} />
-          <CategoryNav categories={categories} />
+          <div className="flex items-center gap-4">
+            {/* Topic tabs — primary nav, takes up available space */}
+            <div className="flex-1 min-w-0">
+              <CategoryNav categories={categories} />
+            </div>
+            {/* Region dropdown — secondary, sits to the right */}
+            <div className="shrink-0">
+              <GeoFilter activeGeo={activeGeo} />
+            </div>
+          </div>
         </div>
       </SmartNav>
     </>

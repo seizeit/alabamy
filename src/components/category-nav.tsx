@@ -49,7 +49,7 @@ export default function CategoryNav({
   return (
     <div
       ref={navRef as React.RefObject<HTMLDivElement>}
-      className="flex gap-1 overflow-x-auto pb-2.5 scrollbar-hide -mx-4 px-4 sm:-mx-6 sm:px-6"
+      className="flex gap-1 overflow-x-auto py-2 scrollbar-hide"
     >
       {categories.map((cat) => (
         <a
