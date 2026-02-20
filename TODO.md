@@ -16,7 +16,7 @@
 
 ## Phase 3: Feed Fetching
 - [x] **3.01** Create `src/lib/fetchers/rss-fetcher.ts` — parse RSS feeds with rss-parser, batch 10 at a time via `Promise.allSettled`, insert headlines with `onConflictDoNothing` on url, update source last_fetched_at
-- [ ] **3.02** Create `src/lib/fetchers/firecrawl-fetcher.ts` — scrape with Firecrawl SDK (`@mendable/firecrawl-js`), extract headlines from markdown using regex for `[text](url)` patterns, filter out nav/footer links, sequential processing, insert with onConflictDoNothing
+- [x] **3.02** Create `src/lib/fetchers/firecrawl-fetcher.ts` — scrape with Firecrawl SDK (`@mendable/firecrawl-js`), extract headlines from markdown using regex for `[text](url)` patterns, filter out nav/footer links, sequential processing, insert with onConflictDoNothing
 - [ ] **3.03** Create `src/lib/fetchers/pruner.ts` — for each source keep max 20 most recent headlines (by fetched_at), delete older ones
 - [ ] **3.04** Create `src/app/api/cron/fetch-feeds/route.ts` — GET handler with CRON_SECRET Bearer auth, orchestrates: fetch RSS sources → fetch Firecrawl sources → prune → revalidatePath("/"), returns JSON summary, set maxDuration=300
 - [ ] **3.05** Create `vercel.json` with cron schedule `"0 11 * * *"` (6 AM CT) pointing to `/api/cron/fetch-feeds`

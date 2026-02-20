@@ -66,3 +66,12 @@
 - Inserts headlines with `onConflictDoNothing` on url for deduplication
 - Updates source `last_fetched_at` after successful fetch
 - Returns `{ success, failed }` counts for reporting
+
+## 3.02 — Create Firecrawl fetcher
+- Created `src/lib/fetchers/firecrawl-fetcher.ts` with `@mendable/firecrawl-js` SDK
+- Scrapes homepage URLs, extracts headlines from markdown using `[text](url)` regex
+- Filters out nav/footer links via text length checks and skip patterns (social, nav terms, non-http)
+- Resolves relative URLs to absolute using source URL origin
+- Sequential processing to respect Firecrawl API rate limits
+- Inserts with `onConflictDoNothing` on url, updates `last_fetched_at`
+- Returns `{ success, failed }` counts
