@@ -43,3 +43,10 @@
 - Created `drizzle.config.ts` with Turso dialect, schema path, and dbCredentials from env vars
 - `npx drizzle-kit push` correctly requires real Turso credentials (placeholders in .env.local)
 - Config validated: TypeScript compiles cleanly with no errors
+
+## 2.04 — Create seed script with all 44 sources
+- Created `src/db/seed.ts` with all 44 sources from PROJECT_PLAN.md source registry
+- Sources span 10 categories: statewide (8), birmingham (7), huntsville (5), mobile (4), montgomery (4), tuscaloosa (3), auburn (3), sports (4), government (3), radio (3)
+- 30 RSS sources with feed_url, 14 Firecrawl sources with feed_url=null
+- Uses `onConflictDoNothing` for idempotent seeding
+- Runtime requires real Turso credentials (placeholders in .env.local); code compiles cleanly

@@ -11,7 +11,7 @@
 - [x] **2.01** Create `src/db/schema.ts` — Drizzle table definitions for `sources` (id, name, slug, url, feed_url, feed_type, category, active, last_fetched_at, created_at) and `headlines` (id, source_id, title, url, published_at, fetched_at) with indexes and relations
 - [x] **2.02** Create `src/db/index.ts` — Turso client via `@libsql/client` using env vars, export Drizzle instance
 - [x] **2.03** Create `drizzle.config.ts` pointing to Turso, run `npx drizzle-kit push` to create tables
-- [ ] **2.04** Create `src/db/seed.ts` with all 44 sources from PROJECT_PLAN.md source registry, run `npx tsx src/db/seed.ts` to populate sources table
+- [x] **2.04** Create `src/db/seed.ts` with all 44 sources from PROJECT_PLAN.md source registry, run `npx tsx src/db/seed.ts` to populate sources table
 - [ ] **2.05** Create `src/lib/queries.ts` — export `getHeadlinesByCategory()` that returns sources grouped by 10 categories in display order, each source with up to 5 most recent headlines, only active sources with at least 1 headline
 
 ## Phase 3: Feed Fetching
