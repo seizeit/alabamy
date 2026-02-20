@@ -146,3 +146,10 @@
 - Relative timestamp helper: just now, Xm ago, Xh ago, yesterday, Xd ago, or "Mon D" for 30+ days
 - Uses published_at with fallback to fetched_at for timestamp display
 - Build verified: `npm run build` passes
+
+## 4.07 — Create footer component
+- Updated `src/components/footer.tsx` with Next.js Image component for alabamy-icon.png
+- Dark background (#111111) with cream text
+- Contact info: mike@alabamy.com | 205-687-TALK
+- Copyright: 2026 Alabamy. Boundless.
+- Proper Image optimization with width/height attributes
