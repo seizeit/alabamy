@@ -1,24 +1,20 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
-const categories = [
-  { name: "Statewide", slug: "statewide" },
-  { name: "Birmingham", slug: "birmingham" },
-  { name: "Huntsville", slug: "huntsville" },
-  { name: "Mobile", slug: "mobile" },
-  { name: "Montgomery", slug: "montgomery" },
-  { name: "Tuscaloosa", slug: "tuscaloosa" },
-  { name: "Auburn", slug: "auburn" },
-  { name: "Sports", slug: "sports" },
-  { name: "Government", slug: "government" },
-  { name: "Public Radio", slug: "public-radio" },
-];
+type CategoryInfo = { name: string; slug: string };
 
-export default function CategoryNav() {
+export default function CategoryNav({
+  categories,
+}: {
+  categories: CategoryInfo[];
+}) {
   const [active, setActive] = useState<string>("");
+  const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    if (categories.length === 0) return;
+
     const sections = categories
       .map((cat) => document.getElementById(cat.slug))
       .filter(Boolean) as HTMLElement[];
@@ -30,6 +26,15 @@ export default function CategoryNav() {
         for (const entry of entries) {
           if (entry.isIntersecting) {
             setActive(entry.target.id);
+            // Scroll the active pill into view
+            const pill = navRef.current?.querySelector(
+              `[data-slug="${entry.target.id}"]`
+            );
+            pill?.scrollIntoView({
+              behavior: "smooth",
+              block: "nearest",
+              inline: "center",
+            });
           }
         }
       },
@@ -38,15 +43,21 @@ export default function CategoryNav() {
 
     sections.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  }, []);
+  }, [categories]);
+
+  if (categories.length === 0) return null;
 
   return (
-    <nav className="flex gap-2 overflow-x-auto py-3 scrollbar-hide">
+    <nav
+      ref={navRef}
+      className="flex gap-2 overflow-x-auto py-3 scrollbar-hide -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8"
+    >
       {categories.map((cat) => (
         <a
           key={cat.slug}
           href={`#${cat.slug}`}
-          className={`whitespace-nowrap px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
+          data-slug={cat.slug}
+          className={`whitespace-nowrap px-4 py-1.5 rounded-full text-sm font-medium transition-colors shrink-0 ${
             active === cat.slug
               ? "bg-crimson text-white"
               : "bg-cream-dark text-ink-secondary hover:bg-card-border"

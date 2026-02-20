@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter, Raleway } from "next/font/google";
-import Header from "@/components/header";
 import Footer from "@/components/footer";
 import "./globals.css";
 
@@ -52,8 +51,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${raleway.variable}`}>
-        <Header />
-        <main>{children}</main>
+        {children}
         <Footer />
       </body>
     </html>
