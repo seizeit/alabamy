@@ -1,0 +1,5 @@
+Task **3.04** complete. Cron route created at `src/app/api/cron/fetch-feeds/route.ts` with CRON_SECRET Bearer auth, RSS → Firecrawl → prune → revalidate orchestration, JSON summary response, and `maxDuration=300`.
+
+=== POST-TASK BUILD VERIFICATION ===
+./build_loop.sh: line 153: timeout: command not found
+Exit code: 127

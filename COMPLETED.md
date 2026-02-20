@@ -89,3 +89,7 @@
 - Returns JSON summary with RSS/Firecrawl results, prune count, and source counts
 - Sets `maxDuration = 300` for Vercel long-running function support
 - Error handling returns 500 with logged error
+
+## 3.05 — Create vercel.json with cron schedule
+- Created `vercel.json` with cron config targeting `/api/cron/fetch-feeds`
+- Schedule: `0 11 * * *` (11:00 UTC = 6:00 AM CT daily)
