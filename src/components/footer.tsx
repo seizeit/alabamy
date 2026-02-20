@@ -35,24 +35,34 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white">
       <div className="h-0.5 bg-crimson-500" />
-      <div className="max-w-[960px] mx-auto px-4 sm:px-6 py-10">
-        {/* Top row: icon + tagline + social icons */}
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <Image
-              src="/alabamy-icon.png"
-              alt="Alabamy"
-              width={60}
-              height={40}
-              className="h-10 w-auto"
-            />
-            <p className="font-serif italic text-white/70 text-sm">
+      <div className="max-w-[960px] mx-auto px-4 sm:px-6 py-12">
+        <div className="flex flex-col items-center text-center gap-5">
+          {/* Icon */}
+          <Image
+            src="/alabamy-icon.png"
+            alt="Alabamy"
+            width={60}
+            height={40}
+            className="h-10 w-auto"
+          />
+
+          {/* Name + tagline */}
+          <div>
+            <p className="font-display text-lg font-semibold tracking-wide">
+              Alabamy
+            </p>
+            <p className="font-serif italic text-white/60 text-sm mt-0.5">
               Boundless.
             </p>
           </div>
 
+          {/* Contact */}
+          <p className="text-sm text-white/50">
+            hello@alabamy.com &middot; 205-687-TALK
+          </p>
+
           {/* Social icons */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-5">
             {SOCIAL_LINKS.map(({ href, label, icon: Icon }) => (
               <a
                 key={label}
@@ -60,23 +70,15 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener"
                 aria-label={label}
-                className="text-white/50 hover:text-white transition-colors"
+                className="text-white/40 hover:text-white transition-colors"
               >
                 <Icon className="w-5 h-5" />
               </a>
             ))}
           </div>
-        </div>
 
-        {/* Divider */}
-        <div className="h-px bg-white/10 my-6" />
-
-        {/* Bottom row: contact + legal */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-          <p className="text-sm text-white/60">
-            hello@alabamy.com &middot; 205-687-TALK
-          </p>
-          <p className="text-xs text-white/40">
+          {/* Copyright + privacy */}
+          <p className="text-xs text-white/30 mt-2">
             &copy; 2026 Alabamy. All rights reserved. &middot;{" "}
             <Link href="/privacy" className="hover:text-white transition-colors">
               Privacy Policy
