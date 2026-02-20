@@ -84,12 +84,12 @@ function extractHeadlines(
 }
 
 async function fetchSingleFirecrawl(source: FirecrawlSource): Promise<number> {
-  const response = await firecrawl.scrapeUrl(source.url, {
+  const response = await firecrawl.scrape(source.url, {
     formats: ["markdown"],
   });
 
-  if (!response.success || !response.markdown) {
-    throw new Error(`Firecrawl failed for ${source.slug}: ${response.error ?? "no markdown"}`);
+  if (!response.markdown) {
+    throw new Error(`Firecrawl failed for ${source.slug}: no markdown returned`);
   }
 
   const extracted = extractHeadlines(response.markdown, source.url);

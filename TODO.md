@@ -20,7 +20,7 @@
 - [x] **3.03** Create `src/lib/fetchers/pruner.ts` — for each source keep max 20 most recent headlines (by fetched_at), delete older ones
 - [x] **3.04** Create `src/app/api/cron/fetch-feeds/route.ts` — GET handler with CRON_SECRET Bearer auth, orchestrates: fetch RSS sources → fetch Firecrawl sources → prune → revalidatePath("/"), returns JSON summary, set maxDuration=300
 - [x] **3.05** Create `vercel.json` with cron schedule `"0 11 * * *"` (6 AM CT) pointing to `/api/cron/fetch-feeds`
-- [ ] **3.06** Test cron endpoint manually with curl, verify headlines populate in database — if no Turso credentials configured yet, verify the code compiles with `npm run build`
+- [x] **3.06** Test cron endpoint manually with curl, verify headlines populate in database — if no Turso credentials configured yet, verify the code compiles with `npm run build`
 
 ## Phase 4: Frontend Components
 - [ ] **4.01** Create `src/app/layout.tsx` — load Inter + Raleway via next/font/google, set metadata (title "Alabamy | Alabama News", description, OG tags), favicon links, render Header + children + Footer

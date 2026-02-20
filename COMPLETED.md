@@ -93,3 +93,8 @@
 ## 3.05 — Create vercel.json with cron schedule
 - Created `vercel.json` with cron config targeting `/api/cron/fetch-feeds`
 - Schedule: `0 11 * * *` (11:00 UTC = 6:00 AM CT daily)
+
+## 3.06 — Verify build compiles with all feed fetching code
+- Fixed Firecrawl SDK method: `scrapeUrl` → `scrape` (API changed in newer SDK version)
+- Removed `success`/`error` response wrapper checks (SDK returns Document directly)
+- `npm run build` passes successfully with all Phase 1–3 code compiling cleanly
