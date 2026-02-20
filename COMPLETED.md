@@ -50,3 +50,12 @@
 - 30 RSS sources with feed_url, 14 Firecrawl sources with feed_url=null
 - Uses `onConflictDoNothing` for idempotent seeding
 - Runtime requires real Turso credentials (placeholders in .env.local); code compiles cleanly
+
+## 2.05 — Create queries module
+- Created `src/lib/queries.ts` with `getHeadlinesByCategory()` function
+- Returns sources grouped by 10 categories in display order (statewide → radio)
+- Each source includes up to 5 most recent headlines, ordered by fetched_at desc
+- Only returns active sources with at least 1 headline
+- Handles Auburn Newsroom special case: stored as category "auburn" but displayed in Sports
+- Uses Drizzle relational queries with proper typing
+- TypeScript compiles cleanly

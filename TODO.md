@@ -12,7 +12,7 @@
 - [x] **2.02** Create `src/db/index.ts` — Turso client via `@libsql/client` using env vars, export Drizzle instance
 - [x] **2.03** Create `drizzle.config.ts` pointing to Turso, run `npx drizzle-kit push` to create tables
 - [x] **2.04** Create `src/db/seed.ts` with all 44 sources from PROJECT_PLAN.md source registry, run `npx tsx src/db/seed.ts` to populate sources table
-- [ ] **2.05** Create `src/lib/queries.ts` — export `getHeadlinesByCategory()` that returns sources grouped by 10 categories in display order, each source with up to 5 most recent headlines, only active sources with at least 1 headline
+- [x] **2.05** Create `src/lib/queries.ts` — export `getHeadlinesByCategory()` that returns sources grouped by 10 categories in display order, each source with up to 5 most recent headlines, only active sources with at least 1 headline
 
 ## Phase 3: Feed Fetching
 - [ ] **3.01** Create `src/lib/fetchers/rss-fetcher.ts` — parse RSS feeds with rss-parser, batch 10 at a time via `Promise.allSettled`, insert headlines with `onConflictDoNothing` on url, update source last_fetched_at
