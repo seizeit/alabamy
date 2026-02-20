@@ -3,11 +3,14 @@ import {
   getHeadlinesByTopic,
   getTopStories,
   getLastUpdatedAt,
+  getDailyBrief,
   TopicGroup,
   TopStory,
+  DailyBriefData,
 } from "@/lib/queries";
 import Header from "@/components/header";
 import { TopStories } from "@/components/top-stories";
+import { DailyBrief } from "@/components/daily-brief";
 import { CategorySection } from "@/components/category-section";
 
 export const revalidate = 3600;
@@ -23,12 +26,14 @@ export default async function Home({
   let topics: TopicGroup[] = [];
   let topStories: TopStory[] = [];
   let lastUpdatedAt: string | null = null;
+  let dailyBrief: DailyBriefData | null = null;
 
   try {
-    [topics, topStories, lastUpdatedAt] = await Promise.all([
+    [topics, topStories, lastUpdatedAt, dailyBrief] = await Promise.all([
       getHeadlinesByTopic(activeGeo),
       getTopStories(activeGeo, 5),
       getLastUpdatedAt(),
+      getDailyBrief(activeGeo),
     ]);
   } catch {
     // DB unavailable during build
@@ -51,6 +56,7 @@ export default async function Home({
           <Suspense>
             <TopStories stories={topStories} />
           </Suspense>
+          <DailyBrief brief={dailyBrief} />
         </div>
 
         {topics.map((topic, i) => (

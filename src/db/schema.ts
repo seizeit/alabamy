@@ -42,10 +42,28 @@ export const headlines = sqliteTable(
     url: text("url").notNull().unique(),
     published_at: text("published_at"),
     fetched_at: text("fetched_at").default(sql`(datetime('now'))`),
+    topic: text("topic"),
+    classified_at: text("classified_at"),
   },
   (table) => [
     index("idx_headlines_source").on(table.source_id, table.published_at),
     index("idx_headlines_fetched").on(table.fetched_at),
+    index("idx_headlines_topic").on(table.topic),
+  ]
+);
+
+export const dailyBriefs = sqliteTable(
+  "daily_briefs",
+  {
+    id: integer("id").primaryKey({ autoIncrement: true }),
+    geo: text("geo").notNull(),
+    date: text("date").notNull(),
+    summary: text("summary").notNull(),
+    headline_count: integer("headline_count").notNull(),
+    generated_at: text("generated_at").default(sql`(datetime('now'))`),
+  },
+  (table) => [
+    uniqueIndex("idx_daily_briefs_geo_date").on(table.geo, table.date),
   ]
 );
 

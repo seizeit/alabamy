@@ -6,6 +6,8 @@ import { eq } from "drizzle-orm";
 import { fetchRssFeeds } from "@/lib/fetchers/rss-fetcher";
 import { fetchFirecrawlFeeds } from "@/lib/fetchers/firecrawl-fetcher";
 import { pruneHeadlines } from "@/lib/fetchers/pruner";
+import { classifyHeadlines } from "@/lib/ai/classifier";
+import { generateDailyBriefs } from "@/lib/ai/summarizer";
 
 export const dynamic = "force-dynamic";
 export const maxDuration = 300;
@@ -37,6 +39,22 @@ export async function GET(request: NextRequest) {
     // Fetch Firecrawl feeds
     const firecrawlResult = await fetchFirecrawlFeeds(firecrawlSources);
 
+    // Classify headlines with AI (non-fatal)
+    let classifyResult = { classified: 0, failed: 0 };
+    try {
+      classifyResult = await classifyHeadlines();
+    } catch (err) {
+      console.error("AI classification error (non-fatal):", err);
+    }
+
+    // Generate daily briefs with AI (non-fatal)
+    let briefResult = { generated: 0, skipped: 0 };
+    try {
+      briefResult = await generateDailyBriefs();
+    } catch (err) {
+      console.error("AI brief generation error (non-fatal):", err);
+    }
+
     // Prune old headlines
     const pruneResult = await pruneHeadlines();
 
@@ -47,6 +65,8 @@ export async function GET(request: NextRequest) {
       ok: true,
       rss: rssResult,
       firecrawl: firecrawlResult,
+      classified: classifyResult,
+      summaries: briefResult,
       pruned: pruneResult.deletedCount,
       sourceCounts: {
         rss: rssSources.length,
