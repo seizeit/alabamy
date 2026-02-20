@@ -1,0 +1,5 @@
+Task 3.06 complete. Fixed `scrapeUrl` → `scrape` in the Firecrawl fetcher and verified `npm run build` passes cleanly.
+
+=== POST-TASK BUILD VERIFICATION ===
+./build_loop.sh: line 153: timeout: command not found
+Exit code: 127

@@ -98,3 +98,11 @@
 - Fixed Firecrawl SDK method: `scrapeUrl` → `scrape` (API changed in newer SDK version)
 - Removed `success`/`error` response wrapper checks (SDK returns Document directly)
 - `npm run build` passes successfully with all Phase 1–3 code compiling cleanly
+
+## 4.01 — Create layout with metadata, favicons, Header + Footer
+- Updated `src/app/layout.tsx` with full metadata: title "Alabamy | Alabama News", description, OG tags, Twitter card
+- Added favicon links (32x32, 16x16, apple-touch-icon)
+- Imports and renders Header + `<main>` children + Footer
+- Created stub `src/components/header.tsx` (sticky dark header with wordmark)
+- Created stub `src/components/footer.tsx` (dark footer with icon, contact, copyright)
+- Build verified: `npm run build` passes

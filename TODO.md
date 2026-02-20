@@ -23,7 +23,7 @@
 - [x] **3.06** Test cron endpoint manually with curl, verify headlines populate in database — if no Turso credentials configured yet, verify the code compiles with `npm run build`
 
 ## Phase 4: Frontend Components
-- [ ] **4.01** Create `src/app/layout.tsx` — load Inter + Raleway via next/font/google, set metadata (title "Alabamy | Alabama News", description, OG tags), favicon links, render Header + children + Footer
+- [x] **4.01** Create `src/app/layout.tsx` — load Inter + Raleway via next/font/google, set metadata (title "Alabamy | Alabama News", description, OG tags), favicon links, render Header + children + Footer
 - [ ] **4.02** Create `src/components/header.tsx` — sticky header with dark bg (#111111), alabamy-wordmark.png logo linking to /, CategoryNav below
 - [ ] **4.03** Create `src/components/category-nav.tsx` — horizontal scrollable row of pill buttons for 10 categories, linking to #anchor IDs, crimson active state, scrollbar-hide
 - [ ] **4.04** Create `src/components/category-section.tsx` — receives category data, renders heading with crimson border-b-2 + responsive grid (1/2/3 cols) of SourceCards
