@@ -10,6 +10,8 @@ const REGIONS = [
   { slug: "montgomery", label: "Montgomery" },
   { slug: "tuscaloosa", label: "Tuscaloosa" },
   { slug: "auburn", label: "Auburn" },
+  { slug: "cullman", label: "Cullman" },
+  { slug: "dothan", label: "Dothan" },
 ];
 
 export function GeoFilter({ activeGeo = "all" }: { activeGeo?: string }) {

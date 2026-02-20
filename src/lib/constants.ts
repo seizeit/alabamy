@@ -6,4 +6,6 @@ export const GEO_OPTIONS = [
   { slug: "montgomery", label: "Montgomery" },
   { slug: "tuscaloosa", label: "Tuscaloosa" },
   { slug: "auburn", label: "Auburn" },
+  { slug: "cullman", label: "Cullman" },
+  { slug: "dothan", label: "Dothan" },
 ] as const;

@@ -13,6 +13,7 @@ const SHORT_NAMES: Record<string, string> = {
   "Military & Defense": "Military",
   "Culture & Life": "Culture",
   "Weather & Environment": "Weather",
+  "Social & Community": "Social",
 };
 
 export default function CategoryNav({

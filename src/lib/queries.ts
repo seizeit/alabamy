@@ -14,6 +14,7 @@ export const ALL_TOPICS = [
   { slug: "military", name: "Military & Defense" },
   { slug: "culture", name: "Culture & Life" },
   { slug: "weather", name: "Weather & Environment" },
+  { slug: "social", name: "Social & Community" },
 ] as const;
 
 const TOPIC_ORDER = ALL_TOPICS;
