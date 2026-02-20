@@ -153,3 +153,10 @@
 - Contact info: mike@alabamy.com | 205-687-TALK
 - Copyright: 2026 Alabamy. Boundless.
 - Proper Image optimization with width/height attributes
+
+## 4.08 — Create last-updated badge component
+- Created `src/components/last-updated.tsx` with relative time display
+- Small pill badge with cream-dark bg showing "Last updated: [relative time]"
+- Added `getLastUpdatedAt()` query to `src/lib/queries.ts` using `max(headlines.fetched_at)`
+- Relative time helper: just now, Xm ago, Xh ago, yesterday, Xd ago, or "Mon D"
+- Build verified: `npm run build` passes

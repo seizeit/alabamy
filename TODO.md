@@ -30,7 +30,7 @@
 - [x] **4.05** Create `src/components/source-card.tsx` — white card with border, source name in crimson uppercase, up to 5 HeadlineItems in a list
 - [x] **4.06** Create `src/components/headline-item.tsx` — anchor link opening in new tab, Georgia serif headline text with hover:text-crimson, relative timestamp below (2h ago, yesterday, 3d ago)
 - [x] **4.07** Create `src/components/footer.tsx` — dark bg, alabamy-icon.png, contact info (mike@alabamy.com, 205-687-TALK), copyright 2026 Alabamy Boundless
-- [ ] **4.08** Create `src/components/last-updated.tsx` — small badge showing "Last updated: [relative time]" using most recent headline fetched_at
+- [x] **4.08** Create `src/components/last-updated.tsx` — small badge showing "Last updated: [relative time]" using most recent headline fetched_at
 
 ## Phase 5: Homepage
 - [ ] **5.01** Create `src/app/page.tsx` — server component with `export const revalidate = 3600`, call getHeadlinesByCategory(), render hero text "Alabama's News, All in One Place" + LastUpdated + all CategorySections in order

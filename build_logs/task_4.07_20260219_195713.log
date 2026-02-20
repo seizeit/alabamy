@@ -1,0 +1,5 @@
+Task 4.07 complete. Footer component updated with Next.js `Image` component, dark bg, contact info, and copyright.
+
+=== POST-TASK BUILD VERIFICATION ===
+./build_loop.sh: line 153: timeout: command not found
+Exit code: 127

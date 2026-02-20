@@ -1,6 +1,6 @@
 import { db } from "@/db";
 import { sources, headlines } from "@/db/schema";
-import { eq, desc } from "drizzle-orm";
+import { eq, desc, max } from "drizzle-orm";
 
 const CATEGORY_ORDER = [
   { slug: "statewide", name: "Statewide News" },
@@ -96,4 +96,11 @@ export async function getHeadlinesByCategory(): Promise<CategoryGroup[]> {
     name: cat.name,
     sources: grouped.get(cat.slug)!,
   }));
+}
+
+export async function getLastUpdatedAt(): Promise<string | null> {
+  const result = await db
+    .select({ latest: max(headlines.fetched_at) })
+    .from(headlines);
+  return result[0]?.latest ?? null;
 }
