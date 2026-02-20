@@ -26,9 +26,9 @@
   --color-porch-cream: #FFFDF8;
   --color-porch-warm: #F7F3ED;
   --color-porch-tan: #D9CEBF;
-  --color-porch-brown: #7A6B5D;
-  --color-porch-dark: #2C1810;
-  --color-porch-dark-light: #3D2A1F;
+  --color-porch-brown: #4A4A46;
+  --color-porch-dark: #111111;
+  --color-porch-dark-light: #1A1A1A;
   --color-porch-burnt: #D4652A;
 
   /* Warm neutrals (kept for compatibility) */
@@ -38,11 +38,11 @@
   --color-warm-300: #EBE8E2;
   --color-warm-400: #D9CEBF;
   --color-warm-500: #B5B1A9;
-  --color-warm-600: #7A6B5D;
-  --color-warm-700: #5A4F43;
-  --color-warm-800: #3D2A1F;
-  --color-warm-900: #2C1810;
-  --color-warm-950: #1E110A;
+  --color-warm-600: #4A4A46;
+  --color-warm-700: #2A2A28;
+  --color-warm-800: #1A1A1A;
+  --color-warm-900: #111111;
+  --color-warm-950: #0A0A0A;
 
   /* Fonts */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
