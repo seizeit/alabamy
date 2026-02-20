@@ -3,7 +3,7 @@
 ## Phase 1: Project Setup
 - [x] **1.01** Scaffold Next.js project with `npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias "@/*"` — answer prompts non-interactively, preserve existing files (CLAUDE.md, PROJECT_PLAN.md, TODO.md, COMPLETED.md, build_loop.sh, public/ assets)
 - [x] **1.02** Install dependencies: `npm install drizzle-orm @libsql/client rss-parser @mendable/firecrawl-js` and `npm install -D drizzle-kit tsx`
-- [ ] **1.03** Create `.env.local` with TURSO_DATABASE_URL, TURSO_AUTH_TOKEN, FIRECRAWL_API_KEY, and CRON_SECRET placeholders. Verify assets exist in `public/` (alabamy-wordmark.png, alabamy-icon.png, apple-touch-icon.png, favicon-32x32.png, favicon-16x16.png)
+- [x] **1.03** Create `.env.local` with TURSO_DATABASE_URL, TURSO_AUTH_TOKEN, FIRECRAWL_API_KEY, and CRON_SECRET placeholders. Verify assets exist in `public/` (alabamy-wordmark.png, alabamy-icon.png, apple-touch-icon.png, favicon-32x32.png, favicon-16x16.png)
 - [ ] **1.04** Configure Tailwind theme — extend with custom colors (cream, cream-dark, card-border, ink, ink-secondary, ink-muted, crimson, crimson-dark, header-bg, header-text), add Inter + Raleway fonts via next/font/google with CSS variables, set font-serif to Georgia
 - [ ] **1.05** Write `src/app/globals.css` with Tailwind directives, custom font-face variables, scrollbar-hide utility, and base body styles (bg-cream, text-ink, font-sans)
 

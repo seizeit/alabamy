@@ -10,3 +10,8 @@
 - Installed runtime: drizzle-orm, @libsql/client, rss-parser, @mendable/firecrawl-js
 - Installed dev: drizzle-kit, tsx
 - All packages added successfully
+
+## 1.03 — Create .env.local and verify assets
+- Created `.env.local` with placeholders for TURSO_DATABASE_URL, TURSO_AUTH_TOKEN, FIRECRAWL_API_KEY, CRON_SECRET
+- Verified all 5 public assets exist: alabamy-wordmark.png, alabamy-icon.png, apple-touch-icon.png, favicon-32x32.png, favicon-16x16.png
+- Confirmed `.env*.local` is in `.gitignore`
