@@ -1,4 +1,5 @@
 import { SourceWithHeadlines } from "@/lib/queries";
+import { HeadlineItem } from "./headline-item";
 
 export function SourceCard({ source }: { source: SourceWithHeadlines }) {
   return (
@@ -8,9 +9,7 @@ export function SourceCard({ source }: { source: SourceWithHeadlines }) {
       </h3>
       <ul className="space-y-2">
         {source.headlines.map((headline) => (
-          <li key={headline.id}>
-            <span className="text-[15px] leading-snug text-ink">{headline.title}</span>
-          </li>
+          <HeadlineItem key={headline.id} headline={headline} />
         ))}
       </ul>
     </div>

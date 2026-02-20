@@ -130,3 +130,11 @@
 - Section uses `id={slug}` for anchor linking with `scroll-mt-24` offset for sticky header
 - Created stub `src/components/source-card.tsx` for build compatibility
 - Build verified: `npm run build` passes
+
+## 4.05 — Create source-card component
+- Updated `src/components/source-card.tsx` with full implementation
+- White card with rounded-lg border, hover:shadow-md transition
+- Source name in crimson uppercase with tracking-wider
+- Renders up to 5 HeadlineItems from source.headlines array
+- Created stub `src/components/headline-item.tsx` for build compatibility
+- Build verified: `npm run build` passes
