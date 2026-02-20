@@ -44,7 +44,15 @@ export default function Header({
       {/* Sticky nav — always visible */}
       <nav className="sticky top-0 z-50 bg-porch-dark-light border-b border-porch-tan/20 shadow-lg">
         <div className="max-w-[960px] mx-auto px-4 sm:px-6 py-1.5">
-          <div className="flex items-center">
+          {/* Mobile: dropdown above tabs, full width for each */}
+          <div className="sm:hidden">
+            <div className="pb-1.5 mb-1.5 border-b border-porch-tan/10">
+              <GeoFilter activeGeo={activeGeo} />
+            </div>
+            <CategoryNav categories={categories} />
+          </div>
+          {/* Desktop: dropdown left, divider, tabs right */}
+          <div className="hidden sm:flex items-center">
             <div className="shrink-0 pr-4 mr-3 border-r border-porch-tan/20">
               <GeoFilter activeGeo={activeGeo} />
             </div>
